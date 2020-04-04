@@ -1,4 +1,4 @@
-package Lesson_1;
+package lesson_1;
 
 //Formatierung: Strg+Alt+L
 public class Dog {
