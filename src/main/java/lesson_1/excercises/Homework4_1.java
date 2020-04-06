@@ -1,4 +1,4 @@
-package Lesson_1.Excercises;
+package lesson_1.excercises;
 //import Scanner class
 import java.util.Scanner;
 
