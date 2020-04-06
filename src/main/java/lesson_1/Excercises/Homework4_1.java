@@ -1,5 +1,6 @@
 package Lesson_1.Excercises;
 //import Scanner class
+
 import java.util.Scanner;
 
 public class Homework4_1 {
@@ -8,11 +9,11 @@ public class Homework4_1 {
         Scanner input = new Scanner(System.in);
         int number1;
         int number2;
-        int sum,product,difference,quotient;
+        int sum, product, difference, quotient;
         System.out.println("The first number is:");
         number1 = input.nextInt(); //Input first Int
         System.out.println("The second number is:");
-        number2 = input.nextInt(); //Input first Int
+        number2 = input.nextInt(); //Input second Int
         //Calculations
         sum = number1 + number2;
         product = number1 * number2;
