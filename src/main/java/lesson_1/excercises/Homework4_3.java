@@ -19,52 +19,41 @@ public class Homework4_3 {
         sum = number1 + number2 + number3;
         average = (number1 + number2 + number3) / 3;
         product = number1 * number2 * number3;
-        if ((number1 < number2) && (number1 < number3)) {
-            smallest = number1;
-            if (number2 < number3)
-                largest = number3;
-            if (number2 > number3)
-                largest = number2;
-        }
-        if ((number2 < number1) && (number2 < number3)) {
-            smallest = number2;
-            if (number1 < number3)
-                largest = number3;
-            if (number1 > number3)
-                largest = number1;
-        }
-        if ((number3 < number2) && (number3 < number1)) {
-            smallest = number3;
-            if (number1 < number2)
-                largest = number2;
-            if (number1 > number2)
-                largest = number1;
-        }
-        //Number1 == Number2
-        if ((number1 == number2) && (number1 < number3))
-            smallest = number2;
-        if ((number1 == number2) && (number1 > number3))
-            largest = number2;
-        //Number1 == Number 3
-        if ((number1 == number3) && (number1 < number2))
-            smallest = number3;
-        if ((number1 == number3) && (number1 > number2))
-            largest = number3;
-        //Number2 == 3
-        if ((number2 == number3) && (number2 < number1))
-            smallest = number3;
-        if ((number2 == number3) && (number2 > number1))
-            largest = number3;
+        largest = getLargest(number1, number2, number3);
+        smallest = getSmallest(number1, number2, number3);
 
-        //All equal
-        if ((number1 == number2)&&(number2 == number3)){
-            largest = number1;
-            smallest = number3;
-        }
-        System.out.println("The sumn is " + sum);
+        System.out.println("The sum is " + sum);
         System.out.println("The average is " + average);
         System.out.println("The product is " + product);
         System.out.println("The smallest number is " + smallest + " and the largest number is " + largest);
 
+    }
+
+    private static int getSmallest(int a, int b, int c) {
+        int smallest = a;
+
+        if(b < smallest) {
+             smallest = b;
+        }
+
+        if(c < smallest) {
+            smallest = c;
+        }
+
+        return smallest;
+    }
+
+    private static int getLargest(int a, int b, int c) {
+        int largest = a;
+
+        if(b > largest) {
+            largest = b;
+        }
+
+        if(c > largest) {
+            largest = c;
+        }
+
+        return largest;
     }
 }
