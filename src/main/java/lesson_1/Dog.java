@@ -1,4 +1,4 @@
-package lesson_1;
+package Lesson_1;
 
 //Formatierung: Strg+Alt+L
 public class Dog {
@@ -52,6 +52,5 @@ public class Dog {
 
     public void setName(String dogName) {
         this.name = dogName;
-
     }
 }
