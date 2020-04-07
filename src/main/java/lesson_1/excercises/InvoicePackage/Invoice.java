@@ -36,10 +36,10 @@ public class Invoice {
         this.quantity = input;
         if (input < 0) quantity = 0;
     }
-
+    
     public void setPrice(double input) {
         this.price = input;
-        if (input < 0) quantity = 0;
+        if (input < 0) price = 0;
     }
 
     public String getNumber() {
@@ -57,7 +57,8 @@ public class Invoice {
     public double getPrice() {
         return this.price;
     }
-    public  double getInvoiceAmount(){
-      return invoiceAmount = price * quantity;
+
+    public double getInvoiceAmount() {
+        return invoiceAmount = price * quantity;
     }
 }
