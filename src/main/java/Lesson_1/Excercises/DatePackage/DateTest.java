@@ -18,9 +18,9 @@ public class DateTest {
         int givenDay = givenDate.getDay();
         System.out.println("The given day is: "+givenDay);
         int givenMonth = givenDate.getMonth();
-        System.out.println("The given day is: "+givenMonth);
+        System.out.println("The given month is: "+givenMonth);
         int givenYear = givenDate.getYear();
-        System.out.println("The given day is: "+givenYear);
+        System.out.println("The given year is: "+givenYear);
 
         String last = givenDate.displayDate();
         System.out.println("The date you gave is: "+ last);
