@@ -28,9 +28,7 @@ public class AccountTest {
                  owner = counter;}
                 System.out.println("test");
             ++counter;
-
         }
-        counter = owner;
         //Main Transaction Loop (Stops when "y(es)" is typed in)
         while (answer.equals("n")) {
             System.out.println("Welcome " + acc[owner].name);
