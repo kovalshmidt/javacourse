@@ -23,7 +23,7 @@ public class Account {
     }
 
     public void deposit(double input) {
-         this.balance = balance + input;
+        this.balance = balance + input;
     }
 
     public void withdraw(double input) {
