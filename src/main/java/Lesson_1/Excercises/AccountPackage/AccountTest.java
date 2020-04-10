@@ -26,10 +26,10 @@ public class AccountTest {
         String nameCheck1 = input.next();
         for (counter =0; counter < 5;++counter) {
             String accName = acc[counter].getName();
+            System.out.println(acc[counter].name);
             if (accName.equals(nameCheck1)) {
-                System.out.println("If-Test");
+                System.out.println("Registered Account");
                  owner = counter;}
-                System.out.println("test");
         }
 
 
