@@ -1,4 +1,4 @@
-package Lesson_1.Excercises.DatePackage;
+package lesson_1.excercises.date;
 
 public class Date {
     public int day;

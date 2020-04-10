@@ -1,4 +1,4 @@
-package Lesson_1.Excercises.AccountPackage;
+package lesson_1.excercises.account;
 
 import java.util.Scanner;
 
@@ -6,8 +6,7 @@ public class AccountTest {
 
     private static String answer = "y";
     private static int counter;
-
-
+    
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         Account[] acc = new Account[6];
