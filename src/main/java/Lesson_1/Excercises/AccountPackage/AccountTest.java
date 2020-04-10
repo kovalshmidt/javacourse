@@ -12,31 +12,31 @@ public class AccountTest {
         acc[3] = new Account("Richard Rich", 8907548.44);
         acc[4] = new Account("Old Man McZee", 675.98);
         int counter = 1;
-        String answer = "n";
+        String answer = "y";
         int owner = 0;
         int target =0;
 
         System.out.println("Select your account:");
-        while (counter < 5) {
+        for (counter =1; counter < 5;++counter){
             System.out.println(acc[counter].name);
-            ++counter;
         }
-        counter = 0;
+
+
+        //This part is still not working
         String nameCheck1 = input.next();
-        while (counter < 5) {
+        for (counter =0; counter < 5;++counter) {
             String accName = acc[counter].getName();
             if (accName.equals(nameCheck1)) {
                 System.out.println("If-Test");
                  owner = counter;}
                 System.out.println("test");
-            ++counter;
         }
-        counter = 0;
+
+
         //Main Transaction Loop (Stops when "y(es)" is typed in)
-        while (answer.equals("n")) {
-            System.out.println("Welcome " + acc[owner].name);
-            System.out.println("Current balance: " + acc[owner].balance);
-            counter = 1;
+        System.out.println("Welcome " + acc[owner].name);
+        System.out.println("Current balance: " + acc[owner].balance);
+        while (answer.equals("y")) {
             System.out.println("Would you like to:");
             System.out.println("[Deposit] money");
             System.out.println("[Withdraw] money");
@@ -55,16 +55,14 @@ public class AccountTest {
             if (nameCheck2.equals("Transfer")) {
                 System.out.println("Choose the target account:");
                 String targetCheck = input.next();
-                while (counter < 5) {
+                for (counter =0; counter < 5;++counter) {
                     String accName = acc[counter].getName();
                     if (accName.equals(targetCheck)) {
                         System.out.println("If-Test");
                         target = counter;
                     }
                     System.out.println("test");
-                    ++counter;
                 }
-                counter = 0;
                 System.out.println("Choose the amount you want to transfer:");
                 double amount = input.nextDouble();
                 acc[owner].withdraw(amount);

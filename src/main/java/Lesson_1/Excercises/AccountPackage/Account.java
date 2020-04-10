@@ -22,16 +22,15 @@ public class Account {
         return this.balance;
     }
 
-    public double deposit(double input) {
-        return this.balance + input;
+    public void deposit(double input) {
+         this.balance = balance + input;
     }
 
-    public double withdraw(double input) {
+    public void withdraw(double input) {
         if (balance >= input)
-            return this.balance - input;
+            this.balance = balance - input;
         else {
             System.out.println("You can't take more than you have!");
-            return this.balance;
         }
     }
 }
