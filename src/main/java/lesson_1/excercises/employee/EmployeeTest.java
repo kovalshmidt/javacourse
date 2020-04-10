@@ -1,4 +1,4 @@
-package Lesson_1.Excercises.EmployeePackage;
+package lesson_1.excercises.employee;
 
 import java.util.Scanner;
 

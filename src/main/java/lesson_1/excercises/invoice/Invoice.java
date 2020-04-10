@@ -1,4 +1,4 @@
-package Lesson_1.Excercises.InvoicePackage;
+package lesson_1.excercises.invoice;
 
 public class Invoice {
 

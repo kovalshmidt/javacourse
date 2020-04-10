@@ -1,4 +1,4 @@
-package Lesson_1.Excercises.AccountPackage;
+package lesson_1.excercises.account;
 
 import java.util.Scanner;
 
