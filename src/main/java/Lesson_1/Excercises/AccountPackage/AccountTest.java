@@ -12,9 +12,9 @@ public class AccountTest {
         acc[3] = new Account("Richard Rich", 8907548.44);
         acc[4] = new Account("Old Man McZee", 675.98);
         int counter = 1;
-        boolean gotEm = false;
         String answer = "n";
         int owner = 0;
+        int target =0;
 
         System.out.println("Select your account:");
         while (counter < 5) {
@@ -24,11 +24,14 @@ public class AccountTest {
         counter = 0;
         String nameCheck1 = input.next();
         while (counter < 5) {
-            if (acc[counter].name.equals(nameCheck1)) {
+            String accName = acc[counter].getName();
+            if (accName.equals(nameCheck1)) {
+                System.out.println("If-Test");
                  owner = counter;}
                 System.out.println("test");
             ++counter;
         }
+        counter = 0;
         //Main Transaction Loop (Stops when "y(es)" is typed in)
         while (answer.equals("n")) {
             System.out.println("Welcome " + acc[owner].name);
@@ -49,7 +52,28 @@ public class AccountTest {
                 acc[owner].withdraw(input.nextDouble());
                 System.out.println("New Balance: " + acc[owner].balance);
             }
-            answer = "y";
+            if (nameCheck2.equals("Transfer")) {
+                System.out.println("Choose the target account:");
+                String targetCheck = input.next();
+                while (counter < 5) {
+                    String accName = acc[counter].getName();
+                    if (accName.equals(targetCheck)) {
+                        System.out.println("If-Test");
+                        target = counter;
+                    }
+                    System.out.println("test");
+                    ++counter;
+                }
+                counter = 0;
+                System.out.println("Choose the amount you want to transfer:");
+                double amount = input.nextDouble();
+                acc[owner].withdraw(amount);
+                acc[target].deposit(amount);
+                System.out.println("New Balance: " + acc[owner].balance);
+                System.out.println("New Balance of " + acc[target] +" is " + acc[target].balance);
+            }
+            System.out.println("anything else? [y/n]");
+            answer = input.next();
         }
 
     }
