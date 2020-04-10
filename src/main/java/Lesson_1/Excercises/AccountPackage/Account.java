@@ -1,8 +1,8 @@
 package Lesson_1.Excercises.AccountPackage;
 
 public class Account {
-    public String name;
-    public double balance;
+    private String name;
+    private double balance;
 
     public Account(String name, double balance) {
         this.name = name;
@@ -27,9 +27,9 @@ public class Account {
     }
 
     public void withdraw(double input) {
-        if (balance >= input)
+        if (balance >= input) {
             this.balance = balance - input;
-        else {
+        } else {
             System.out.println("You can't take more than you have!");
         }
     }
