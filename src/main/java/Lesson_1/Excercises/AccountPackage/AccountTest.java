@@ -11,7 +11,7 @@ public class AccountTest {
         acc[2] = new Account("Lana Yang", 5789.47);
         acc[3] = new Account("Richard Rich", 8907548.44);
         acc[4] = new Account("Old Man McZee", 675.98);
-        int counter = 1;
+        int counter;
         String answer = "y";
         int owner = 0;
         int target =0;
