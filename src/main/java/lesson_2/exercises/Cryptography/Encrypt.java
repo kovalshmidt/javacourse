@@ -1,8 +1,8 @@
-package lesson_1.excercises.Cryptography;
+package lesson_2.exercises.Cryptography;
 
 import java.util.Scanner;
 
-public class Decrypt {
+public class Encrypt {
     public static void main(String[] args) {
         int number;
         Scanner input = new Scanner(System.in);
@@ -11,8 +11,8 @@ public class Decrypt {
         int[] digit = new int[4];
         for (int i = 0; i <= 3; i++) {
             digit[i] = (int) (number % Math.pow(10, (i + 1)) / Math.pow(10, i));
-            digit[i] += 10;
-            digit[i] -= 7;
+            digit[i] += 7;
+            digit[i] %= 10;
         }
         int digitSwitch;
         for (int x = 0; x <= 1; x++) {
@@ -20,7 +20,8 @@ public class Decrypt {
             digit[x] = digit[2 + x];
             digit[2 + x] = digitSwitch;
         }
-        for (int i = 3; i >= 0; i--) System.out.print(digit[i] + "");
+        for (int i = 3; i >= 0; i--) System.out.print(digit[i]+"");
     }
 }
+
 
