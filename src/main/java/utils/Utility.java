@@ -7,7 +7,8 @@ public class Utility {
         for (int count = letter.length() - 1; count >= 0; count--) {
             reverseNumber.append(letter.charAt(count));
         }
-        return reverseNumber.toString().equals(letter);
+        //return reverseNumber.toString().equals(letter);
+        return true;
     }
 
 
@@ -28,7 +29,6 @@ public class Utility {
     }
 
 
-
     public static int[] encrypt(int number) {
         int[] digit = new int[4];
         for (int i = 0; i <= 3; i++) {
@@ -44,7 +44,6 @@ public class Utility {
         }
         return digit;
     }
-
 
 
     public static int[] decrypt(int number) {
