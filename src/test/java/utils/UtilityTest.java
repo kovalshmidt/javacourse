@@ -1,5 +1,6 @@
 package utils;
 
+<<<<<<< HEAD
 import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -33,4 +34,10 @@ class UtilityTest {
         softAssertions.assertAll();
 
     }
+=======
+class UtilityTest {
+
+
+
+>>>>>>> 633b1b5... general commit, utils class
 }
