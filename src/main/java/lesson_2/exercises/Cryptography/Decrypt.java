@@ -13,6 +13,9 @@ public class Decrypt {
             digit[i] = (int) (number % Math.pow(10, (i + 1)) / Math.pow(10, i));
             digit[i] += 10;
             digit[i] -= 7;
+            if (digit[i] > 9) {
+                digit[i] -= 10;
+            }
         }
         int digitSwitch;
         for (int x = 0; x <= 1; x++) {

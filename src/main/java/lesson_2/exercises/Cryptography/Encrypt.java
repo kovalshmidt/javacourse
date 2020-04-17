@@ -20,7 +20,7 @@ public class Encrypt {
             digit[x] = digit[2 + x];
             digit[2 + x] = digitSwitch;
         }
-        for (int i = 3; i >= 0; i--) System.out.print(digit[i]+"");
+        for (int i = 3; i >= 0; i--) System.out.print(digit[i] + "");
     }
 }
 
