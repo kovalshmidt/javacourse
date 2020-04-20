@@ -2,7 +2,7 @@ package lesson_2.exercises;
 
 import java.util.Scanner;
 
-import static utils.Utility.getDecimal;
+import static utils.Utility.Number_Test.getDecimal;
 
 public class BinaryToDecimal {
     public static void main(String[] args) {

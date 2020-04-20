@@ -1,67 +1,119 @@
 package utils;
 
 public class Utility {
-    public static boolean isPalindrome(int number) {
-        StringBuilder reverseNumber = new StringBuilder();
-        String letter = String.valueOf(number);
-        for (int count = letter.length() - 1; count >= 0; count--) {
-            reverseNumber.append(letter.charAt(count));
-        }
-        //return reverseNumber.toString().equals(letter);
-        return true;
-    }
 
-
-    public static int getDecimal(int binary) {
-        int decimal = 0;
-        int n = 0;
-        while (true) {
-            if (binary == 0) {
-                break;
-            } else {
-                int temporary = binary % 10;
-                decimal += temporary * Math.pow(2, n);
-                binary = binary / 10;
-                n++;
+    public static class Boolean_Tests {
+        public static boolean isPalindrome(int number) {
+            StringBuilder reverseNumber = new StringBuilder();
+            String letter = String.valueOf(number);
+            for (int count = letter.length() - 1; count >= 0; count--) {
+                reverseNumber.append(letter.charAt(count));
             }
+            //return reverseNumber.toString().equals(letter);
+            return true;
         }
-        return decimal;
+
+        public static boolean oddOrEven(int nmb) {
+            return nmb % 2 == 0;
+        }
+
+        public static boolean isMultiple(int nmb1, int nmb2) {
+            return nmb2 % nmb1 == 0;
+        }
+
     }
 
+    public static class Number_Test {
 
-    public static int[] encrypt(int number) {
-        int[] digit = new int[4];
-        for (int i = 0; i <= 3; i++) {
-            digit[i] = (int) (number % Math.pow(10, (i + 1)) / Math.pow(10, i));
-            digit[i] += 7;
-            digit[i] %= 10;
-        }
-        int digitSwitch;
-        for (int x = 0; x <= 1; x++) {
-            digitSwitch = digit[x];
-            digit[x] = digit[2 + x];
-            digit[2 + x] = digitSwitch;
-        }
-        return digit;
-    }
-
-
-    public static int[] decrypt(int number) {
-        int[] digit = new int[4];
-        for (int i = 0; i <= 3; i++) {
-            digit[i] = (int) (number % Math.pow(10, (i + 1)) / Math.pow(10, i));
-            digit[i] += 10;
-            digit[i] -= 7;
-            if (digit[i] > 9) {
-                digit[i] -= 10;
+        public static int getDecimal(int binary) {
+            int decimal = 0;
+            int n = 0;
+            while (true) {
+                if (binary == 0) {
+                    break;
+                } else {
+                    int temporary = binary % 10;
+                    decimal += temporary * Math.pow(2, n);
+                    binary = binary / 10;
+                    n++;
+                }
             }
+            return decimal;
         }
-        int digitSwitch;
-        for (int x = 0; x <= 1; x++) {
-            digitSwitch = digit[x];
-            digit[x] = digit[2 + x];
-            digit[2 + x] = digitSwitch;
+
+        public static double circleArea(double radius) {
+            final double PI = 3.1415926535;
+
+            return 2 * PI * radius;
         }
-        return digit;
+
+    }
+
+    public static class QuotientsAndDigits {
+        public static int Quotient(int nmb1, int nmb2) {
+            return nmb1 / nmb2;
+        }
+
+        public static int Remainder(int nmb1, int nmb2) {
+            return nmb1 % nmb2;
+        }
+
+        public static String Digits(int nmb) {
+            StringBuilder finalResult = new StringBuilder();
+            String step = Integer.toString(nmb);
+            int[] digit = new int[step.length()];
+            for (int i = 0; i < step.length(); i++) {
+                digit[i] = (int) (nmb % Math.pow(10, (i + 1)) / Math.pow(10, i));
+            }
+            for (int i = step.length()-1; i >= 0; i--) {
+                if (i == 0) {
+                    finalResult.append(digit[i]);
+                } else {
+                    finalResult.append(digit[i]).append("  ");
+                }
+            }
+            return finalResult.toString();
+        }
+    }
+
+
+    public static class Cryptography {
+        public static int encrypt(int number) {
+            int[] digit = new int[4];
+            for (int i = 0; i <= 3; i++) {
+                digit[i] = (int) (number % Math.pow(10, (i + 1)) / Math.pow(10, i));
+                digit[i] += 7;
+                digit[i] %= 10;
+            }
+            int digitSwitch;
+            for (int x = 0; x <= 1; x++) {
+                digitSwitch = digit[x];
+                digit[x] = digit[2 + x];
+                digit[2 + x] = digitSwitch;
+            }
+            String step = Integer.toString(digit[3]) + Integer.toString(digit[2]) + Integer.toString(digit[1]) + Integer.toString(digit[0]);
+            return Integer.parseInt(step);
+        }
+
+
+        public static int decrypt(int number) {
+            int[] digit = new int[4];
+            for (int i = 0; i <= 3; i++) {
+                digit[i] = (int) (number % Math.pow(10, (i + 1)) / Math.pow(10, i));
+                digit[i] += 10;
+                digit[i] -= 7;
+                if (digit[i] > 9) {
+                    digit[i] -= 10;
+                }
+            }
+            int digitSwitch;
+            for (int x = 0; x <= 1; x++) {
+                digitSwitch = digit[x];
+                digit[x] = digit[2 + x];
+                digit[2 + x] = digitSwitch;
+            }
+            String step = Integer.toString(digit[3]) + Integer.toString(digit[2]) + Integer.toString(digit[1]) + Integer.toString(digit[0]);
+            return Integer.parseInt(step);
+        }
     }
 }

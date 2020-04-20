@@ -2,7 +2,7 @@ package lesson_2.exercises;
 
 import java.util.Scanner;
 
-import static utils.Utility.isPalindrome;
+import static utils.Utility.Boolean_Tests.isPalindrome;
 
 /**
  * A palindrome is a sequence of characters that reads the same backward as for- ward. For example, each of the following
