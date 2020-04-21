@@ -66,13 +66,10 @@ public class MerchantCalc {
             }
             System.out.println("Anything else? (yes/no)");
             String answer = input.next();
-            switch (answer) {
-                case "yes":
-                    end = false;
-                    break;
-                case "no":
-                    end = true;
-                    break;
+            if ("yes".equals(answer)) {
+                end = false;
+            } else if ("no".equals(answer)) {
+                end = true;
             }
 
         } while (!end);
