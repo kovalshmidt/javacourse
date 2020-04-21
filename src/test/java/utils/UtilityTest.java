@@ -55,6 +55,15 @@ class UtilityTest {
         softAssertions.assertThat(Utility.QuotientsAndDigits.Digits(4562)).isEqualTo("4  5  6  2");
     }
 
+    @Test
+    public void testTemperatureCalculator(){
+        softAssertions.assertThat(Utility.Temperature.Celsius(100)).isEqualTo(37.77777777777778);
+        softAssertions.assertThat(Utility.Temperature.Fahrenheit(37.77777777777778)).isEqualTo(100.0);
+        softAssertions.assertThat(Utility.Temperature.Celsius(-40)).isEqualTo(-40);
+        softAssertions.assertThat(Utility.Temperature.Fahrenheit(100)).isEqualTo(212);
+    }
+
+
     @AfterAll
     public static void end() {
         softAssertions.assertAll();

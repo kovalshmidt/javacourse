@@ -2,6 +2,19 @@ package utils;
 
 public class Utility {
 
+    public static class Temperature{
+
+        public static double Celsius(double fahrenheit){
+            return 5.0/9.0*(fahrenheit-32);
+        }
+
+        public static double Fahrenheit(double celsius){
+            return 9.0/5.0*celsius+32;
+        }
+    }
+
+
+
     public static class Boolean_Tests {
         public static boolean isPalindrome(int number) {
             StringBuilder reverseNumber = new StringBuilder();
@@ -91,7 +104,7 @@ public class Utility {
                 digit[x] = digit[2 + x];
                 digit[2 + x] = digitSwitch;
             }
-            String step = Integer.toString(digit[3]) + Integer.toString(digit[2]) + Integer.toString(digit[1]) + Integer.toString(digit[0]);
+            String step = Integer.toString(digit[3]) + digit[2] + digit[1] + digit[0];
             return Integer.parseInt(step);
         }
 
@@ -112,7 +125,7 @@ public class Utility {
                 digit[x] = digit[2 + x];
                 digit[2 + x] = digitSwitch;
             }
-            String step = Integer.toString(digit[3]) + Integer.toString(digit[2]) + Integer.toString(digit[1]) + Integer.toString(digit[0]);
+            String step = Integer.toString(digit[3]) + digit[2] + digit[1] + digit[0];
             return Integer.parseInt(step);
         }
     }
