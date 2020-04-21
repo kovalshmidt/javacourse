@@ -63,6 +63,14 @@ class UtilityTest {
         softAssertions.assertThat(Utility.Temperature.Fahrenheit(100)).isEqualTo(212);
     }
 
+    @Test
+    public void testPrime(){
+        softAssertions.assertThat(Utility.Boolean_Tests.isPrime(0)).isFalse();
+        softAssertions.assertThat(Utility.Boolean_Tests.isPrime(1)).isFalse();
+        softAssertions.assertThat(Utility.Boolean_Tests.isPrime(11)).isTrue();
+        softAssertions.assertThat(Utility.Boolean_Tests.isPrime(5647854)).isFalse();
+        softAssertions.assertThat(Utility.Boolean_Tests.isPrime(7589)).isTrue();
+    }
 
     @AfterAll
     public static void end() {

@@ -2,20 +2,36 @@ package utils;
 
 public class Utility {
 
-    public static class Temperature{
+    public static class Temperature {
 
-        public static double Celsius(double fahrenheit){
-            return 5.0/9.0*(fahrenheit-32);
+        public static double Celsius(double fahrenheit) {
+            return 5.0 / 9.0 * (fahrenheit - 32);
         }
 
-        public static double Fahrenheit(double celsius){
-            return 9.0/5.0*celsius+32;
+        public static double Fahrenheit(double celsius) {
+            return 9.0 / 5.0 * celsius + 32;
         }
     }
 
 
-
     public static class Boolean_Tests {
+
+        public static boolean isPrime(int number) {
+            boolean prime = true;
+            if (number == 0 | number == 1) {
+                prime = false;
+            } else {
+                for (int i = 2; i < number; i++) {
+                    if (number % i == 0) {
+                        prime = false;
+                        break;
+                    }
+                }
+            }
+            return prime;
+        }
+
+
         public static boolean isPalindrome(int number) {
             StringBuilder reverseNumber = new StringBuilder();
             String letter = String.valueOf(number);
@@ -78,7 +94,7 @@ public class Utility {
             for (int i = 0; i < step.length(); i++) {
                 digit[i] = (int) (nmb % Math.pow(10, (i + 1)) / Math.pow(10, i));
             }
-            for (int i = step.length()-1; i >= 0; i--) {
+            for (int i = step.length() - 1; i >= 0; i--) {
                 if (i == 0) {
                     finalResult.append(digit[i]);
                 } else {
