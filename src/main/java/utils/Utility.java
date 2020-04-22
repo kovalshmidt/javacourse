@@ -4,11 +4,11 @@ public class Utility {
 
     public static class Temperature {
 
-        public static double Celsius(double fahrenheit) {
+        public static double toCelsius(double fahrenheit) {
             return 5.0 / 9.0 * (fahrenheit - 32);
         }
 
-        public static double Fahrenheit(double celsius) {
+        public static double toFahrenheit(double celsius) {
             return 9.0 / 5.0 * celsius + 32;
         }
     }
@@ -38,11 +38,10 @@ public class Utility {
             for (int count = letter.length() - 1; count >= 0; count--) {
                 reverseNumber.append(letter.charAt(count));
             }
-            //return reverseNumber.toString().equals(letter);
-            return true;
+            return reverseNumber.toString().equals(letter);
         }
 
-        public static boolean oddOrEven(int nmb) {
+        public static boolean isEven(int nmb) {
             return nmb % 2 == 0;
         }
 
@@ -79,20 +78,20 @@ public class Utility {
     }
 
     public static class QuotientsAndDigits {
-        public static int Quotient(int nmb1, int nmb2) {
-            return nmb1 / nmb2;
+        public static int Quotient(int number1, int number2) {
+            return number1 / number2;
         }
 
-        public static int Remainder(int nmb1, int nmb2) {
-            return nmb1 % nmb2;
+        public static int Remainder(int number1, int number2) {
+            return number1 % number2;
         }
 
-        public static String Digits(int nmb) {
+        public static String Digits(int number) {
             StringBuilder finalResult = new StringBuilder();
-            String step = Integer.toString(nmb);
+            String step = Integer.toString(number);
             int[] digit = new int[step.length()];
             for (int i = 0; i < step.length(); i++) {
-                digit[i] = (int) (nmb % Math.pow(10, (i + 1)) / Math.pow(10, i));
+                digit[i] = (int) (number % Math.pow(10, (i + 1)) / Math.pow(10, i));
             }
             for (int i = step.length() - 1; i >= 0; i--) {
                 if (i == 0) {

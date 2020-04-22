@@ -20,10 +20,10 @@ class UtilityTest {
     @Test
     public void testPalindrome() {
         softAssertions.assertThat(Utility.Boolean_Tests.isPalindrome(44544)).isTrue();
-        softAssertions.assertThat(Utility.Boolean_Tests.isPalindrome(346252)).isTrue();
+        softAssertions.assertThat(Utility.Boolean_Tests.isPalindrome(346252)).isFalse();
         softAssertions.assertThat(Utility.Boolean_Tests.isPalindrome(1234321)).isTrue();
         softAssertions.assertThat(Utility.Boolean_Tests.isPalindrome(666)).isTrue();
-        softAssertions.assertThat(Utility.Boolean_Tests.isPalindrome(985789)).isTrue();
+        softAssertions.assertThat(Utility.Boolean_Tests.isPalindrome(985789)).isFalse();
     }
 
     @Test
@@ -37,11 +37,11 @@ class UtilityTest {
 
     @Test
     public void  testOddEven(){
-        softAssertions.assertThat(Utility.Boolean_Tests.oddOrEven(47)).isFalse();
-        softAssertions.assertThat(Utility.Boolean_Tests.oddOrEven(83434)).isTrue();
-        softAssertions.assertThat(Utility.Boolean_Tests.oddOrEven(0)).isTrue();
-        softAssertions.assertThat(Utility.Boolean_Tests.oddOrEven(94791)).isFalse();
-        softAssertions.assertThat(Utility.Boolean_Tests.oddOrEven(412)).isTrue();
+        softAssertions.assertThat(Utility.Boolean_Tests.isEven(47)).isFalse();
+        softAssertions.assertThat(Utility.Boolean_Tests.isEven(83434)).isTrue();
+        softAssertions.assertThat(Utility.Boolean_Tests.isEven(0)).isTrue();
+        softAssertions.assertThat(Utility.Boolean_Tests.isEven(94791)).isFalse();
+        softAssertions.assertThat(Utility.Boolean_Tests.isEven(412)).isTrue();
     }
     @Test
     public void testDecryptEncrypt(){
@@ -57,10 +57,10 @@ class UtilityTest {
 
     @Test
     public void testTemperatureCalculator(){
-        softAssertions.assertThat(Utility.Temperature.Celsius(100)).isEqualTo(37.77777777777778);
-        softAssertions.assertThat(Utility.Temperature.Fahrenheit(37.77777777777778)).isEqualTo(100.0);
-        softAssertions.assertThat(Utility.Temperature.Celsius(-40)).isEqualTo(-40);
-        softAssertions.assertThat(Utility.Temperature.Fahrenheit(100)).isEqualTo(212);
+        softAssertions.assertThat(Utility.Temperature.toCelsius(100)).isEqualTo(37.77777777777778);
+        softAssertions.assertThat(Utility.Temperature.toFahrenheit(37.77777777777778)).isEqualTo(100.0);
+        softAssertions.assertThat(Utility.Temperature.toCelsius(-40)).isEqualTo(-40);
+        softAssertions.assertThat(Utility.Temperature.toFahrenheit(100)).isEqualTo(212);
     }
 
     @Test
