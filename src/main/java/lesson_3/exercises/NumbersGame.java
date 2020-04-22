@@ -51,6 +51,6 @@ public class NumbersGame {
     }
 
     private static int RNG() {
-        return new Random().nextInt(1000);
+        return new Random().nextInt(1000)+1;
     }
 }
