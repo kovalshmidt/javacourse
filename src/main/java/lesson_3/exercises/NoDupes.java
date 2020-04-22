@@ -15,7 +15,6 @@ public class NoDupes {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int[] number = new int[5];
-        boolean duplicate;
         for (int m = 0; m <= 4; m++) {
             number[m] = 0;
         }
@@ -25,17 +24,7 @@ public class NoDupes {
             placeholder = Integer.parseInt(input.nextLine());
             if ((placeholder >= 10) & (placeholder <= 100)) {
                 number[i] = placeholder;
-                for (int k = 0; k <= i; k++) {
-                    duplicate = false;
-                    for (int n = 0; n < k; n++) {
-                        if (number[k] == number[n]) {
-                            duplicate = true;
-                            break;
-                        }
-                    }
-                    System.out.print((duplicate ? "" : number[k] + " "));
-                }
-                System.out.println();
+                numberRow(number, i);
             } else {
                 System.out.println("Between 10 and 100");
                 i--;
@@ -43,17 +32,22 @@ public class NoDupes {
         }
         System.out.println("The unique numbers are:");
         System.out.println("***************");
-        for (int i = 0; i <= 4; i++) {
+        numberRow(number, 4);
+        System.out.println("***************");
+    }
+
+    private static void numberRow(int[] number, int max) {
+        boolean duplicate;
+        for (int k = 0; k <= max; k++) {
             duplicate = false;
-            for (int n = 0; n < i; n++) {
-                if (number[i] == number[n]) {
+            for (int n = 0; n < k; n++) {
+                if (number[k] == number[n]) {
                     duplicate = true;
                     break;
                 }
             }
-            System.out.print((duplicate ? "" : number[i] + " "));
+            System.out.print((duplicate ? "" : number[k] + " "));
         }
         System.out.println();
-        System.out.println("***************");
     }
 }
