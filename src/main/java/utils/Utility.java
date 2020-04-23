@@ -78,15 +78,15 @@ public class Utility {
     }
 
     public static class QuotientsAndDigits {
-        public static int Quotient(int number1, int number2) {
+        public static int quotient(int number1, int number2) {
             return number1 / number2;
         }
 
-        public static int Remainder(int number1, int number2) {
+        public static int remainder(int number1, int number2) {
             return number1 % number2;
         }
 
-        public static String Digits(int number) {
+        public static String digits(int number) {
             StringBuilder finalResult = new StringBuilder();
             String step = Integer.toString(number);
             int[] digit = new int[step.length()];
