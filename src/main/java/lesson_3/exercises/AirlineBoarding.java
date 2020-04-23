@@ -29,7 +29,7 @@ public class AirlineBoarding {
         boolean seatsAvailable;
         boolean skip, error;
         String wish, answer;
-        int targetClass = 0;
+        int targetClass;
 
         for (int i = 0; i <= 9; i++) {
             seats[i] = false;
