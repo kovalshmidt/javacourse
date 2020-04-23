@@ -3,15 +3,15 @@ package lesson_2.exercises;
 
 /**
  * Goal:
- *     *
- *    ***
- *   *****
- *  *******
+ * *
+ * ***
+ * *****
+ * *******
  * *********
- *  *******
- *   *****
- *    ***
- *     *
+ * *******
+ * *****
+ * ***
+ * *
  */
 public class Diamond {
     public static void main(String[] args) {
