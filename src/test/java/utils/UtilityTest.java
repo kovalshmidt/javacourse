@@ -50,9 +50,9 @@ class UtilityTest {
     }
     @Test
     public void testQuotientRemainderDigits(){
-        softAssertions.assertThat(Utility.QuotientsAndDigits.Quotient(259,23)).isEqualTo(11);
-        softAssertions.assertThat(Utility.QuotientsAndDigits.Remainder(259,23)).isEqualTo(6);
-        softAssertions.assertThat(Utility.QuotientsAndDigits.Digits(4562)).isEqualTo("4  5  6  2");
+        softAssertions.assertThat(Utility.QuotientsAndDigits.quotient(259,23)).isEqualTo(11);
+        softAssertions.assertThat(Utility.QuotientsAndDigits.remainder(259,23)).isEqualTo(6);
+        softAssertions.assertThat(Utility.QuotientsAndDigits.digits(4562)).isEqualTo("4  5  6  2");
     }
 
     @Test

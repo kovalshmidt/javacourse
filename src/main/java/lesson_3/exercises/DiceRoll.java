@@ -32,15 +32,11 @@ public class DiceRoll {
          */
 
         for (int i = 0; i <= 36000000; i++) {
-            dice1 = Throw();
-            dice2 = Throw();
+            dice1 = diceThrow();
+            dice2 = diceThrow();
             diceSum = dice1 + dice2;
-            for (int k = 1; k <= 12; k++) {
-                if (diceSum == k) {
-                    combo[k - 2] +=1;
-                    break;
-                }
-            }
+            combo[diceSum - 2] +=1;
+
 
         }
         for (int j = 0; j <= 10; j++) {
@@ -48,7 +44,7 @@ public class DiceRoll {
         }
     }
 
-    private static int Throw() {
+    private static int diceThrow() {
         return new Random().nextInt(6) + 1;
     }
 }
