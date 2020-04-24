@@ -30,18 +30,30 @@ public class Turtle {
 
     public void addY() {
         this.y++;
+        if (this.y > 19) {
+            this.y = 19;
+        }
     }
 
     public void addX() {
         this.x++;
+        if (this.x > 19) {
+            this.x = 19;
+        }
     }
 
     public void subtractY() {
         this.y--;
+        if (this.y < 0) {
+            this.y = 0;
+        }
     }
 
     public void subtractX() {
         this.x--;
+        if (this.x < 0) {
+            this.x = 0;
+        }
     }
 
     public boolean getPen() {
