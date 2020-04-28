@@ -78,7 +78,7 @@ public class KnightMain {
                 heuristic[i][y] = 2;
                if (!(((i == 0)|(i == 7))&((y == 0)|(y == 7)))){
                    heuristic[i][y]++;
-                   if
+                   
                }
             }
         }
