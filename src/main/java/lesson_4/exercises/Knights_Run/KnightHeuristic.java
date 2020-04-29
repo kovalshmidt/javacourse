@@ -68,10 +68,91 @@ package lesson_4.exercises.Knights_Run;
 
 import java.util.Random;
 
-public class KnightMain {
+public class KnightHeuristic {
     public static void main(String[] args) {
         KnightFigure knight = new KnightFigure();
         int[][] chessboard = new int[8][8];
+        int[][] heuristic = new int[8][8];
+        int alpha, beta;
+        if (isZeroOrSeven()) {
+            alpha = 0;
+        } else {
+            alpha = 7;
+        }
+        if (isZeroOrSeven()) {
+            beta = 0;
+        } else {
+            beta = 7;
+        }
+
+        knight.setYPosition(alpha);
+        knight.setXPosition(beta);
+
+        for (int i = 0; i < 8; i++) {
+            for (int y = 0; y < 8; y++) {
+                switch (i) {
+                    case 0:
+                    case 7:
+                        switch (y) {
+                            case 0:
+                            case 7:
+                                heuristic[i][y] = 2;
+                                break;
+                            case 1:
+                            case 6:
+                                heuristic[i][y] = 3;
+                                break;
+                            case 2:
+                            case 3:
+                            case 4:
+                            case 5:
+                                heuristic[i][y] = 4;
+                                break;
+                        }
+                        break;
+                    case 1:
+                    case 6:
+                        switch (y) {
+                            case 0:
+                            case 7:
+                                heuristic[i][y] = 3;
+                                break;
+                            case 1:
+                            case 6:
+                                heuristic[i][y] = 4;
+                                break;
+                            case 2:
+                            case 3:
+                            case 4:
+                            case 5:
+                                heuristic[i][y] = 6;
+                                break;
+                        }
+                        break;
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                        switch (y) {
+                            case 0:
+                            case 7:
+                                heuristic[i][y] = 4;
+                                break;
+                            case 1:
+                            case 6:
+                                heuristic[i][y] = 6;
+                                break;
+                            case 2:
+                            case 3:
+                            case 4:
+                            case 5:
+                                heuristic[i][y] = 8;
+                                break;
+                        }
+                        break;
+                }
+            }
+        }
         for (int i = 0; i < 8; i++) {
             for (int y = 0; y < 8; y++) {
                 chessboard[i][y] = 0;
@@ -80,12 +161,26 @@ public class KnightMain {
         chessboard[knight.get_yPosition()][knight.get_xPosition()] = 1;
         //Chess Moves
         for (int r = 1; r <= 64; r++) {
-            int m = RNG();
             int x = knight.get_xPosition();
             int y = knight.get_yPosition();
+            int xK = x;
+            int yK = y;
+            int m = 0;
+            for (int k = 0; k <= 7; k++) {
+                knight.chessMove(k);
+                if (k != 0) {
+                    if (heuristic[knight.get_yPosition()][knight.get_xPosition()] < heuristic[yK][xK]) {
+                        m = k;
+                        yK = knight.get_yPosition();
+                        xK = knight.get_xPosition();
+                    }
+                    knight.reverseMove(k);
+                }
+            }
             knight.chessMove(m);
             if ((chessboard[knight.get_yPosition()][knight.get_xPosition()] == 0)) {
                 chessboard[knight.get_yPosition()][knight.get_xPosition()] = 1;
+                heuristic[knight.get_yPosition()][knight.get_xPosition()] = 10;
             } else {
                 knight.reverseMove(m);
             }
@@ -97,12 +192,12 @@ public class KnightMain {
         for (int i = 0; i < 8; i++) {
             for (int y = 0; y <= 7; y++) {
                 if (chessboard[i][y] == 0) {
-                        System.out.print("0");
+                    System.out.print("0  ");
                 } else {
                     if (chessboard[i][y] == 1) {
-                        System.out.print("+");
+                        System.out.print("+  ");
                     } else {
-                        System.out.print("*");
+                        System.out.print("*  ");
                     }
                 }
                 if (y == 7) {
@@ -113,7 +208,7 @@ public class KnightMain {
     }
 
 
-    public static int RNG() {
-        return new Random().nextInt(8);
+    public static boolean isZeroOrSeven() {
+        return new Random().nextBoolean();
     }
 }
