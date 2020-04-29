@@ -72,6 +72,7 @@ public class Race {
             if ((status.getTortoisePosition() >= 70) || (status.getHarePosition() >= 70)){
                 finished = true;
             }
+            //else { A way to delete the last three lines}
             Thread.sleep(1000);
         }
         if (status.getTortoisePosition() > status.getHarePosition()) {
