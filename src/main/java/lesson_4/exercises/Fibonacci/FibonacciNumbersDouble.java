@@ -10,11 +10,11 @@ public class FibonacciNumbersDouble {
         System.out.println("Type in the wanted nth Fibonacci number");
         number = input.nextInt();
         System.out.println("The number is:");
-        System.out.println(FibonacciResult(number));
+        System.out.println(FibonacciResultDouble(number));
         //highest Number: 1477 >> 1.3069892237633987E308 before infinity
 
     }
-    public static double FibonacciResult(double number){
+    public static double FibonacciResultDouble(double number){
         double previous1 = 0;
         double previous2 = 1;
         double result = 1;
