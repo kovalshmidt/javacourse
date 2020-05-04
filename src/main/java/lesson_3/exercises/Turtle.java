@@ -111,9 +111,11 @@ public class Turtle {
                 break;
             case 3:
                 painter.turnRight();
+                System.out.println("Turn right");
                 break;
             case 4:
                 painter.turnLeft();
+                System.out.println("Turn left");
                 break;
             case 5:
                 for (int l = 0; l <= length; l++) {
