@@ -79,37 +79,35 @@ public class KnightMain {
         }
         chessboard[knight.get_yPosition()][knight.get_xPosition()] = 1;
         //Chess Moves
-        for (int r = 1; r <= 64; r++) {
+        for (int r = 2; r <= 64; r++) {
             int m = RNG();
             int x = knight.get_xPosition();
             int y = knight.get_yPosition();
+
+            //Move the knight
             knight.chessMove(m);
+
+            //Check if field was taken
             if ((chessboard[knight.get_yPosition()][knight.get_xPosition()] == 0)) {
-                chessboard[knight.get_yPosition()][knight.get_xPosition()] = 1;
+                //Assign the value to the new field
+                chessboard[knight.get_yPosition()][knight.get_xPosition()] = r;
+                System.out.println("valid move");
+                KnightFigure.printBoard(chessboard);
             } else {
-                knight.reverseMove(m);
-            }
-            if ((x == knight.get_xPosition()) & (y == knight.get_yPosition())) {
+                //reverse move and return to previous r value
+                if(x != knight.get_xPosition() && y != knight.get_yPosition()) {
+                    knight.reverseMove(m);
+                }
                 r--;
+                System.out.println("invalid move");
+                KnightFigure.printBoard(chessboard);
+            }
+
+            if(r == 20) {
+                break;
             }
         }
-        chessboard[knight.get_yPosition()][knight.get_xPosition()] = 2;
-        for (int i = 0; i < 8; i++) {
-            for (int y = 0; y <= 7; y++) {
-                if (chessboard[i][y] == 0) {
-                        System.out.print("0");
-                } else {
-                    if (chessboard[i][y] == 1) {
-                        System.out.print("+");
-                    } else {
-                        System.out.print("*");
-                    }
-                }
-                if (y == 7) {
-                    System.out.println();
-                }
-            }
-        }
+        KnightFigure.printBoard(chessboard);
     }
 
 
