@@ -24,11 +24,9 @@ public class KnightFigure {
     }
 
     public void set_Position(int factorY, int factorX) {
-        if ((yPosition + factorY <= 7)&&(yPosition + factorY>=0)) {
-            this.yPosition += factorY;
-        }
-        if ((xPosition + factorX <= 7)&&(xPosition + factorX>=0)) {
-            this.xPosition += factorX;
+        if (((yPosition + factorY <= 7)&&(yPosition + factorY>=0))&&((xPosition + factorX <= 7)&&(xPosition + factorX>=0)) ) {
+                this.xPosition += factorX;
+                this.yPosition += factorY;
         }
     }
 
@@ -94,5 +92,17 @@ public class KnightFigure {
 
     public void setXPosition(int xPosition) {
         this.xPosition = xPosition;
+    }
+
+    public static void printBoard(int[][] chessboard) {
+        for (int i = 0; i < 8; i++) {
+            for (int y = 0; y <= 7; y++) {
+                        System.out.print(chessboard[i][y]+"  ");
+                if (y == 7) {
+                    System.out.println();
+                }
+            }
+        }
+        System.out.println();
     }
 }

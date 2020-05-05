@@ -165,47 +165,35 @@ public class KnightHeuristic {
             int y = knight.get_yPosition();
             int xK = x;
             int yK = y;
-            int m = 0;
-            for (int k = 0; k <= 7; k++) {
-                knight.chessMove(k);
-                if (k != 0) {
+            int finalMove = 0;
+            for (int trialMove = 0; trialMove <= 7; trialMove++) {
+                knight.chessMove(trialMove);
                     if (heuristic[knight.get_yPosition()][knight.get_xPosition()] < heuristic[yK][xK]) {
-                        m = k;
+                        finalMove = trialMove;
                         yK = knight.get_yPosition();
                         xK = knight.get_xPosition();
                     }
-                    knight.reverseMove(k);
-                }
+                    knight.reverseMove(trialMove);
             }
-            knight.chessMove(m);
+            knight.chessMove(finalMove);
+            KnightFigure.printBoard(chessboard);
             if ((chessboard[knight.get_yPosition()][knight.get_xPosition()] == 0)) {
-                chessboard[knight.get_yPosition()][knight.get_xPosition()] = 1;
+                chessboard[knight.get_yPosition()][knight.get_xPosition()] = r;
                 heuristic[knight.get_yPosition()][knight.get_xPosition()] = 10;
             } else {
-                knight.reverseMove(m);
+                knight.reverseMove(finalMove);
             }
             if ((x == knight.get_xPosition()) & (y == knight.get_yPosition())) {
                 r--;
             }
-        }
-        chessboard[knight.get_yPosition()][knight.get_xPosition()] = 2;
-        for (int i = 0; i < 8; i++) {
-            for (int y = 0; y <= 7; y++) {
-                if (chessboard[i][y] == 0) {
-                    System.out.print("0  ");
-                } else {
-                    if (chessboard[i][y] == 1) {
-                        System.out.print("+  ");
-                    } else {
-                        System.out.print("*  ");
-                    }
-                }
-                if (y == 7) {
-                    System.out.println();
-                }
+            if(r==5){
+                break;
             }
         }
+        chessboard[knight.get_yPosition()][knight.get_xPosition()] = 2;
+        KnightFigure.printBoard(chessboard);
     }
+
 
 
     public static boolean isZeroOrSeven() {

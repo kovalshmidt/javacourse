@@ -145,7 +145,7 @@ public class HugeInteger {
         String[] numbers = reverseNumber.toString().split(" ");
         for(String number: numbers){
             int i = 0;
-            hugeInt[i].add(Integer.valueOf(number));
+            //hugeInt[i].add(Integer.valueOf(number));
             i++;
         }
     }
