@@ -10,11 +10,11 @@ public class FibonacciNumbersInt {
         System.out.println("Type in the wanted nth Fibonacci number");
         number = input.nextInt();
         System.out.println("The number is:");
-        System.out.println(FibonacciResult(number));
+        System.out.println(FibonacciResultInt(number));
         //highest Number: 47 >>1836311903
 
     }
-    public static int FibonacciResult(int number){
+    public static int FibonacciResultInt(int number){
         int previous1 = 0;
         int previous2 = 1;
         int result = 1;
