@@ -1,13 +1,19 @@
 package lesson_4.exercises.Shapes;
 
+import lombok.Data;
 
-public class Rectangle extends TwoDShape {
-    public Rectangle() {
-        super(0, 0, 0, 0);
+@Data
+public class Rectangle implements TwoDShape {
+
+    private double lengthX, lengthY;
+
+    @Override
+    public double perimeter() {
+        return 2 * lengthX + 2 * lengthY;
     }
 
+    @Override
     public double getArea() {
-        this.area = xLength * yLength;
-        return this.area;
+        return lengthX * lengthY;
     }
 }

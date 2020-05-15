@@ -2,6 +2,7 @@ package lesson_4.exercises.Quadrilateral;
 
 public class QuadMain {
     public static void main(String[] args) {
+        Quadrilateral test = new Quadrilateral();
         Trapezoid trapezoid = makeTrapezoid();
         System.out.println("Trapezoid");
         printSize(trapezoid.getVectorA(), trapezoid.getVectorB(), trapezoid.getVectorC(), trapezoid.getVectorD(), trapezoid.getHeight(), trapezoid.getArea());

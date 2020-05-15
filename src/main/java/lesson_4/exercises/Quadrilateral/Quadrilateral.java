@@ -3,7 +3,7 @@ package lesson_4.exercises.Quadrilateral;
 import lombok.Getter;
 
 @Getter
-public class QuadSuper{
+public class Quadrilateral {
     protected double pointAX, pointAY;
     protected double pointBX, pointBY;
     protected double pointCX, pointCY;
@@ -11,38 +11,8 @@ public class QuadSuper{
     protected double vectorA, vectorB, vectorC, vectorD;
     protected double area, height;
 
-    public QuadSuper(double pointAX, double pointAY, double pointBX, double pointBY, double pointCX, double pointCY, double pointDX, double pointDY, double vectorA, double vectorB, double vectorC, double vectorD, double area, double height) {
-        this.pointAX = pointAX;
-        this.pointAY = pointAY;
-        this.pointBX = pointBX;
-        this.pointBY = pointBY;
-        this.pointCX = pointCX;
-        this.pointCY = pointCY;
-        this.pointDX = pointDX;
-        this.pointDY = pointDY;
-        this.vectorA = vectorA;
-        this.vectorB = vectorB;
-        this.vectorC = vectorC;
-        this.vectorD = vectorD;
-        this.area = area;
-        this.height = height;
-    }
+    public Quadrilateral() {
 
-    public QuadSuper() {
-        this.pointAX = 0;
-        this.pointAY = 0;
-        this.pointBX = 0;
-        this.pointBY = 0;
-        this.pointCX = 0;
-        this.pointCY = 0;
-        this.pointDX = 0;
-        this.pointDY = 0;
-        this.vectorA = 0;
-        this.vectorB = 0;
-        this.vectorC = 0;
-        this.vectorD = 0;
-        this.area = 0;
-        this.height = 0;
     }
 
 

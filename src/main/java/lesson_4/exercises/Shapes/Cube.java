@@ -1,23 +1,15 @@
 package lesson_4.exercises.Shapes;
 
-public class Cube extends ThreeDShape {
+public class Cube extends Square implements ThreeDShape {
 
-    public Cube() {
-        super(0, 0, 0, 0, 0, 0);
+    @Override
+    public double getSurfaceArea() {
+        return 6 * getArea();
     }
 
-    public double getArea() {
-        this.area = 2 * (this.xLength * this.yLength) + 2 * (this.xLength * this.zLength) + 2 * (this.yLength * this.zLength);
-        return this.area;
-    }
-
+    @Override
     public double getVolume() {
-        this.volume = this.xLength * this.yLength * this.zLength;
-        return this.volume;
+        return getArea() * getLengthXY();
     }
 
-    public double getHeight() {
-        this.height = this.yLength;
-        return this.height;
-    }
 }

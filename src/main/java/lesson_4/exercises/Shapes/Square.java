@@ -1,12 +1,19 @@
 package lesson_4.exercises.Shapes;
 
-public class Square extends TwoDShape {
-    public Square() {
-        super(0, 0, 0, 0);
+import lombok.Data;
+
+@Data
+public class Square implements TwoDShape {
+
+    private double lengthXY;
+
+    @Override
+    public double perimeter() {
+        return 4 * lengthXY;
     }
 
+    @Override
     public double getArea() {
-        this.area = xLength * xLength;
-        return this.area;
+        return Math.pow(lengthXY,2);
     }
 }
