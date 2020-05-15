@@ -3,7 +3,7 @@ package lesson_4.exercises.Quadrilateral;
 import lombok.Getter;
 
 @Getter
-public class QuadSuper {
+public class QuadSuper{
     protected double pointAX, pointAY;
     protected double pointBX, pointBY;
     protected double pointCX, pointCY;

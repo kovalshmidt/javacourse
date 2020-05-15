@@ -2,7 +2,6 @@ package lesson_4.exercises.Quadrilateral;
 
 public class Parallelogram extends QuadSuper {
     public Parallelogram() {
-        super();
         this.pointAX = 0;
         this.pointAY = 0;
         this.pointBX = 0;

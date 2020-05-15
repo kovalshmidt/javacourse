@@ -3,7 +3,6 @@ package lesson_4.exercises.Quadrilateral;
 public class Trapezoid extends QuadSuper {
 
     public Trapezoid() {
-        super();
         this.pointAX = 0;
         this.pointAY = 0;
         this.pointBX = 0;
