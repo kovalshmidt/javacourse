@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class HugeInteger {
     public static void main(String[] args) {
         int[] hugeInt = new int[40];
-        StringBuilder reverseNumber = new StringBuilder();
         boolean end = false;
         Scanner input = new Scanner(System.in);
 
