@@ -1,7 +1,5 @@
 package lesson_4.exercises;
 
-import lombok.ToString;
-
 import java.util.Scanner;
 
 public class HugeInteger {
@@ -12,12 +10,12 @@ public class HugeInteger {
         Scanner input = new Scanner(System.in);
 
         System.out.println("Type in a 40 digit number:");
-        Parse(hugeInt, reverseNumber, false, input);
+        Parse(hugeInt, input);
 
         System.out.println("What do you want to do?");
+        boolean correct = false;
+        String action = input.next();
         do {
-            boolean correct = false;
-            String action = input.next();
             switch (action) {
                 case "add":
                     System.out.println("Please choose a digit:");
@@ -28,9 +26,9 @@ public class HugeInteger {
                     break;
 
                 case "compare":
-                    boolean isEqualTo = false, isNotEqualTo = false, isGreaterThan = false, isLessThan = false, isGreaterThanOrEqualTo = false, isLessThanOrEqualTo = false;
+                    //boolean isEqualTo = false, isNotEqualTo = false, isGreaterThan = false, isLessThan = false, isGreaterThanOrEqualTo = false, isLessThanOrEqualTo = false;
                     System.out.println("Choose two digits:");
-                    Compare(input, correct);
+                    Compare(input, correct, hugeInt);
                     break;
                 case "print":
                     Print(hugeInt);
@@ -39,72 +37,76 @@ public class HugeInteger {
                     System.out.println("Unknown action. Please type in a valid action");
             }
             System.out.println("Anything else y/n");
-            if (input.next().equals("n")) {
+            String finalize = input.next();
+            if (finalize.equals("n")) {
                 end = true;
+            } else {
+                action = finalize;
             }
         } while (!end);
     }
 
     private static void Print(int[] hugeInt) {
-        for (int i = 0;i<=39;i++){
-            System.out.print(hugeInt[i]+" ");
+        for (int i = 0; i <= 39; i++) {
+            System.out.print(hugeInt[i] + " ");
         }
         System.out.println();
     }
 
-    private static void Compare(Scanner input, boolean correct) {
-        boolean isGreaterThan;
-        boolean isGreaterThanOrEqualTo;
-        boolean isLessThan;
-        boolean isLessThanOrEqualTo;
-        boolean isEqualTo;
-        boolean isNotEqualTo;
+    private static void Compare(Scanner input, boolean correct, int[] hugeInt) {
         do {
             int digit1 = input.nextInt() - 1;
             System.out.println("and");
             int digit2 = input.nextInt() - 1;
             if ((digit1 <= 39) & (digit2 <= 39)) {
-                IsGreaterThanOrEqualTo(digit1 >= digit2, digit1 > digit2);
-                IsLessThanOrEqualTo(digit1 <= digit2, digit1 < digit2);
-                IsEqualTo(digit1, digit2);
+                if (isEqualTo(hugeInt[digit1], hugeInt[digit2])) {
+                    System.out.println(hugeInt[digit1] + " is equal to " + hugeInt[digit2]);
+                }
+                if (isNotEqualTo(hugeInt[digit1], hugeInt[digit2])) {
+                    System.out.println(hugeInt[digit1] + " is not equal than " + hugeInt[digit2]);
+                }
+                if (isGreaterThan(hugeInt[digit1], hugeInt[digit2])) {
+                    System.out.println(hugeInt[digit1] + " is greater than " + hugeInt[digit2]);
+                }
+                if (isLessThan(hugeInt[digit1], hugeInt[digit2])) {
+                    System.out.println(hugeInt[digit1] + " is less than " + hugeInt[digit2]);
+                }
+                if (isGreaterOrEqualTo(hugeInt[digit1], hugeInt[digit2])) {
+                    System.out.println(hugeInt[digit1] + " is greater than or equal to " + hugeInt[digit2]);
+                }
+                if (isLessOrEqualTo(hugeInt[digit1], hugeInt[digit2])) {
+                    System.out.println(hugeInt[digit1] + " is less than or equal to " + hugeInt[digit2]);
+                }
 
                 correct = true;
-            }else {
+            } else {
                 System.out.println("Two valid digits!");
             }
         } while (!correct);
     }
 
-    private static void IsEqualTo(int digit1, int digit2) {
-        boolean isEqualTo = false;
-        boolean isNotEqualTo = false;
-        if (digit1 == digit2) {
-            isEqualTo = true;
-        } else {
-            isNotEqualTo = true;
-        }
+    private static boolean isEqualTo(int a, int b) {
+        return (a == b);
     }
 
-    private static void IsLessThanOrEqualTo(boolean b, boolean b2) {
-        boolean isLessThan;
-        boolean isLessThanOrEqualTo;
-        if (b) {
-            if (b2) {
-                isLessThan = true;
-            }
-            isLessThanOrEqualTo = true;
-        }
+    private static boolean isNotEqualTo(int a, int b) {
+        return (a != b);
     }
 
-    private static void IsGreaterThanOrEqualTo(boolean b, boolean b2) {
-        boolean isGreaterThan = false;
-        boolean isGreaterThanOrEqualTo;
-        if (b) {
-            if (b2) {
-                isGreaterThan = true;
-            }
-            isGreaterThanOrEqualTo = true;
-        }
+    private static boolean isGreaterThan(int a, int b) {
+        return (a > b);
+    }
+
+    private static boolean isLessThan(int a, int b) {
+        return (a < b);
+    }
+
+    private static boolean isGreaterOrEqualTo(int a, int b) {
+        return (a >= b);
+    }
+
+    private static boolean isLessOrEqualTo(int a, int b) {
+        return (a <= b);
     }
 
     private static void Addition(int[] hugeInt, Scanner input, boolean correct) {
@@ -114,7 +116,7 @@ public class HugeInteger {
             int addition = input.nextInt();
             if (digit <= 39) {
                 hugeInt[digit] += addition;
-                System.out.println("Result: "+ hugeInt[digit]);
+                System.out.println("Result: " + hugeInt[digit]);
                 correct = true;
             } else {
                 System.out.println("A digit between 1 and 40");
@@ -129,7 +131,7 @@ public class HugeInteger {
             int subtraction = input.nextInt();
             if (digit <= 39) {
                 hugeInt[digit] -= subtraction;
-                System.out.println("Result: "+ hugeInt[digit]);
+                System.out.println("Result: " + hugeInt[digit]);
                 correct = true;
             } else {
                 System.out.println("A digit between 1 and 40");
@@ -137,16 +139,13 @@ public class HugeInteger {
         } while (!correct);
     }
 
-    private static void Parse(int[] hugeInt, StringBuilder reverseNumber, boolean forty, Scanner input) {
+    private static void Parse(int[] hugeInt, Scanner input) {
         String provisional = input.next();
-        for (int count = provisional.length() - 1; count >= 0; count--) {
-            reverseNumber.append(provisional.charAt(count));
-        }
-        String[] numbers = reverseNumber.toString().split(" ");
-        for(String number: numbers){
-            int i = 0;
-            //hugeInt[i].add(Integer.valueOf(number));
-            i++;
+        for (int i = 0; i < provisional.length(); i++) {
+            int j = Character.digit(provisional.charAt(i), 10);
+            Math.pow(j, 2);
+
+            hugeInt[i] = j;
         }
     }
 }
