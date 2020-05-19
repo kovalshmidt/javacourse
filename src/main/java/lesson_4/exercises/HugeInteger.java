@@ -18,10 +18,10 @@ public class HugeInteger {
             switch (action) {
                 case "add":
                     System.out.println("Please choose a digit:");
-                    Addition(hugeInt, input, false);
+                    Addition(hugeInt, input, correct);
                     break;
                 case "subtract":
-                    Subtraction(hugeInt, input, false);
+                    Subtraction(hugeInt, input, correct);
                     break;
 
                 case "compare":
@@ -35,9 +35,9 @@ public class HugeInteger {
                 default:
                     System.out.println("Unknown action. Please type in a valid action");
             }
-            System.out.println("Anything else y/n");
+            System.out.println("Anything else (new order or no)");
             String finalize = input.next();
-            if (finalize.equals("n")) {
+            if (finalize.equals("no")) {
                 end = true;
             } else {
                 action = finalize;
@@ -142,7 +142,7 @@ public class HugeInteger {
         String provisional = input.next();
         for (int i = 0; i < provisional.length(); i++) {
             int j = Character.digit(provisional.charAt(i), 10);
-            Math.pow(j, 2);
+            //Math.pow(j, 2);
 
             hugeInt[i] = j;
         }
