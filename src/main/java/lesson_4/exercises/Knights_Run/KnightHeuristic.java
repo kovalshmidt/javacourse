@@ -158,22 +158,22 @@ public class KnightHeuristic {
                 chessboard[i][y] = 0;
             }
         }
-        chessboard[knight.get_yPosition()][knight.get_xPosition()] = 1;
         //Chess Moves
         for (int r = 1; r <= 64; r++) {
-            int x = knight.get_xPosition();
-            int y = knight.get_yPosition();
-            int xK = x;
-            int yK = y;
+            int previousX = knight.get_xPosition();
+            int previousY = knight.get_yPosition();
+            int currentXPosition = previousX;
+            int currentYPosition = previousY;
             int finalMove = 0;
             for (int trialMove = 0; trialMove <= 7; trialMove++) {
                 knight.chessMove(trialMove);
-                    if (heuristic[knight.get_yPosition()][knight.get_xPosition()] < heuristic[yK][xK]) {
+                    if (heuristic[knight.get_yPosition()][knight.get_xPosition()] < heuristic[currentYPosition][currentXPosition]) {
                         finalMove = trialMove;
-                        yK = knight.get_yPosition();
-                        xK = knight.get_xPosition();
+                        currentYPosition = knight.get_yPosition();
+                        currentXPosition = knight.get_xPosition();
                     }
-                    knight.reverseMove(trialMove);
+                        knight.reverseMove(previousX,previousY);
+
             }
             knight.chessMove(finalMove);
             KnightFigure.printBoard(chessboard);
@@ -181,16 +181,10 @@ public class KnightHeuristic {
                 chessboard[knight.get_yPosition()][knight.get_xPosition()] = r;
                 heuristic[knight.get_yPosition()][knight.get_xPosition()] = 10;
             } else {
-                knight.reverseMove(finalMove);
+                knight.reverseMove(previousX,previousY);
             }
-            if ((x == knight.get_xPosition()) & (y == knight.get_yPosition())) {
-                r--;
-            }
-            if(r==5){
-                break;
-            }
+            if (r==5) break;
         }
-        chessboard[knight.get_yPosition()][knight.get_xPosition()] = 2;
         KnightFigure.printBoard(chessboard);
     }
 
