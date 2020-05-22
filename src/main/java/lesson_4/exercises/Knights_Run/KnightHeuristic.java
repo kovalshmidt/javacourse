@@ -164,10 +164,15 @@ public class KnightHeuristic {
             int previousY = knight.get_yPosition();
             int currentXPosition = previousX;
             int currentYPosition = previousY;
-            int finalMove = 0;
+            int foresightX = currentXPosition;
+            int foresightY = currentYPosition;
+            int finalMove = 0,reserveMove = 0;
             for (int trialMove = 0; trialMove <= 7; trialMove++) {
                 knight.chessMove(trialMove);
                     if (heuristic[knight.get_yPosition()][knight.get_xPosition()] < heuristic[currentYPosition][currentXPosition]) {
+                        if (heuristic[knight.get_yPosition()][knight.get_xPosition()] == heuristic[currentYPosition][currentXPosition]) {
+
+                        }
                         finalMove = trialMove;
                         currentYPosition = knight.get_yPosition();
                         currentXPosition = knight.get_xPosition();
@@ -183,7 +188,6 @@ public class KnightHeuristic {
             } else {
                 knight.reverseMove(previousX,previousY);
             }
-            if (r==5) break;
         }
         KnightFigure.printBoard(chessboard);
     }
