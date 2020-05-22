@@ -82,4 +82,28 @@ public class KnightFigure {
         }
         System.out.println();
     }
+
+    public static boolean checkBoard(int[][] chessboard){
+        boolean checkEm =true;
+        for (int i = 0; i < 8; i++) {
+            for (int y = 0; y <= 7; y++) {
+                if (chessboard[i][y] == 0) {
+                    checkEm = false;
+                    break;
+                }
+            }
+        }
+        return checkEm;
+    }
+    public static int highestNumber(int[][] chessboard){
+         int bestNumber = 0;
+        for (int i = 0; i < 8; i++) {
+            for (int y = 0; y <= 7; y++) {
+                if (chessboard[i][y] > bestNumber) {
+                    bestNumber = chessboard[i][y];
+                }
+            }
+        }
+        return bestNumber;
+    }
 }

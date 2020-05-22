@@ -83,8 +83,6 @@ public class KnightMain {
             int m = RNG();
             int x = knight.get_xPosition();
             int y = knight.get_yPosition();
-            int oldX = x;
-            int oldY = y;
 
             //Move the knight
             knight.chessMove(m);
@@ -94,20 +92,15 @@ public class KnightMain {
                 //Assign the value to the new field
                 chessboard[knight.get_yPosition()][knight.get_xPosition()] = r;
                 System.out.println("valid move");
-                KnightFigure.printBoard(chessboard);
             } else {
                 //reverse move and return to previous r value
                 if(x != knight.get_xPosition() && y != knight.get_yPosition()) {
-                    knight.reverseMove(oldX,oldY);
+                    knight.reverseMove(x, y);
                 }
                 r--;
                 System.out.println("invalid move");
-                KnightFigure.printBoard(chessboard);
             }
-
-            if(r == 20) {
-                break;
-            }
+            KnightFigure.printBoard(chessboard);
         }
         KnightFigure.printBoard(chessboard);
     }
