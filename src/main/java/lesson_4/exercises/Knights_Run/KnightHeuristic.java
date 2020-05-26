@@ -160,38 +160,41 @@ public class KnightHeuristic {
         }
         //Chess Moves
         for (int r = 1; r <= 64; r++) {
-            int previousX = knight.get_xPosition();
-            int previousY = knight.get_yPosition();
-            int currentXPosition = previousX;
-            int currentYPosition = previousY;
-            int foresightX = currentXPosition;
-            int foresightY = currentYPosition;
-            int finalMove = 0,reserveMove = 0;
-            for (int trialMove = 0; trialMove <= 7; trialMove++) {
-                knight.chessMove(trialMove);
-                    if (heuristic[knight.get_yPosition()][knight.get_xPosition()] < heuristic[currentYPosition][currentXPosition]) {
-                        if (heuristic[knight.get_yPosition()][knight.get_xPosition()] == heuristic[currentYPosition][currentXPosition]) {
-
-                        }
-                        finalMove = trialMove;
-                        currentYPosition = knight.get_yPosition();
-                        currentXPosition = knight.get_xPosition();
-                    }
-                        knight.reverseMove(previousX,previousY);
-
-            }
-            knight.chessMove(finalMove);
-            KnightFigure.printBoard(chessboard);
-            if ((chessboard[knight.get_yPosition()][knight.get_xPosition()] == 0)) {
-                chessboard[knight.get_yPosition()][knight.get_xPosition()] = r;
-                heuristic[knight.get_yPosition()][knight.get_xPosition()] = 10;
-            } else {
-                knight.reverseMove(previousX,previousY);
-            }
+            movement(knight, chessboard, heuristic, r);
         }
         KnightFigure.printBoard(chessboard);
     }
 
+    private static void movement(KnightFigure knight, int[][] chessboard, int[][] heuristic, int r) {
+        int previousX = knight.get_xPosition();
+        int previousY = knight.get_yPosition();
+        int currentXPosition = previousX;
+        int currentYPosition = previousY;
+        int foresightX = currentXPosition;
+        int foresightY = currentYPosition;
+        int finalMove = 0,reserveMove = 0;
+        for (int trialMove = 0; trialMove <= 7; trialMove++) {
+            knight.chessMove(trialMove);
+                if (heuristic[knight.get_yPosition()][knight.get_xPosition()] < heuristic[currentYPosition][currentXPosition]) {
+                    if (heuristic[knight.get_yPosition()][knight.get_xPosition()] == heuristic[currentYPosition][currentXPosition]) {
+
+                    }
+                    finalMove = trialMove;
+                    currentYPosition = knight.get_yPosition();
+                    currentXPosition = knight.get_xPosition();
+                }
+                    knight.reverseMove(previousX,previousY);
+
+        }
+        knight.chessMove(finalMove);
+        KnightFigure.printBoard(chessboard);
+        if ((chessboard[knight.get_yPosition()][knight.get_xPosition()] == 0)) {
+            chessboard[knight.get_yPosition()][knight.get_xPosition()] = r;
+            heuristic[knight.get_yPosition()][knight.get_xPosition()] = 10;
+        } else {
+            knight.reverseMove(previousX,previousY);
+        }
+    }
 
 
     public static boolean isZeroOrSeven() {
