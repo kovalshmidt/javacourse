@@ -19,13 +19,13 @@ public class NameList {
         }
         System.out.println("Check for names:");
         String check = input.next();
+        boolean checkEm = false;
         for (String names : firstName){
             if (check.equals(names)){
-                System.out.println("The name "+check+" exists");
+                checkEm = true;
                 break;
-            }else {
-                System.out.println("The name "+check+" doesn't exists");
             }
         }
+        System.out.println("The name "+check+(checkEm ? " exists.":" doesn't exist."));
     }
 }
