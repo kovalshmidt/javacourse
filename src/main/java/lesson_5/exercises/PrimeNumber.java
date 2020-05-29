@@ -8,7 +8,7 @@ import java.util.Collection;
 public class PrimeNumber {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        LinkedList<Integer> primeFactors = new LinkedList<>();
+        Collection<Integer> primeFactors = new LinkedHashSet<>();
         boolean isPrime = true;
         int factor;
 
@@ -24,8 +24,7 @@ public class PrimeNumber {
 
         System.out.println(Prime + " is " + (isPrime ? "" : "not") + " a prime number.");
         if (primeFactors.size() > 0) {
-            Collection<Integer> setFactors = new LinkedHashSet<>(primeFactors);
-            System.out.println(setFactors + " are the prime factors.");
+            System.out.println(primeFactors + " are the prime factors.");
         }
     }
 
@@ -40,7 +39,7 @@ public class PrimeNumber {
     }
 
     //returns all prime factors
-    private static LinkedList<Integer> factorCheck(LinkedList<Integer> primeFactors, int prime, int factor) {
+    private static Collection<Integer> factorCheck(Collection<Integer> primeFactors, int prime, int factor) {
         //other factor (e.g. 2*50 = 100 >> 100/2 = 50)
         int otherFactor = prime / factor;
         //lowest prime 2 of 50 >> 2*2*25 >> 2*2*5*5
