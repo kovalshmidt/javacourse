@@ -1,7 +1,6 @@
 package lesson_5.exercises;
 
 import java.util.LinkedHashSet;
-import java.util.LinkedList;
 import java.util.Scanner;
 import java.util.Collection;
 
@@ -39,7 +38,7 @@ public class PrimeNumber {
     }
 
     //returns all prime factors
-    private static Collection<Integer> factorCheck(Collection<Integer> primeFactors, int prime, int factor) {
+    private static void factorCheck(Collection<Integer> primeFactors, int prime, int factor) {
         //other factor (e.g. 2*50 = 100 >> 100/2 = 50)
         int otherFactor = prime / factor;
         //lowest prime 2 of 50 >> 2*2*25 >> 2*2*5*5
@@ -50,8 +49,5 @@ public class PrimeNumber {
         } else {
             primeFactors.add(otherFactor);
         }
-
-
-        return primeFactors;
     }
 }
