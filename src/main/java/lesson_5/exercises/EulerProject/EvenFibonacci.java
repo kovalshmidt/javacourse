@@ -30,7 +30,7 @@ public class EvenFibonacci {
         fibonacciNumbers.add(0);
         fibonacciNumbers.add(1);
         fibonacciNumbers.add(1);
-        for (int i = 0; result <= number; i++) {
+        while (result <= number) {
             result = previous1 + previous2;
             fibonacciNumbers.add(result);
             previous1 = previous2;
