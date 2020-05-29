@@ -13,7 +13,6 @@ public class ThreeOrFiveMultiples {
     public static void main(String[] args) {
         Collection<Integer> multiples = new LinkedHashSet<>();
         int sum = 0;
-        boolean endOfTheLine = false;
 
 
         for (int i = 3; ; i++) {
