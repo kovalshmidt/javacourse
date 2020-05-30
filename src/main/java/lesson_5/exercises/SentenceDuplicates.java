@@ -1,7 +1,5 @@
 package lesson_5.exercises;
 
-import sun.security.krb5.internal.crypto.Aes128;
-
 import java.util.*;
 
 public class SentenceDuplicates {
@@ -15,11 +13,11 @@ public class SentenceDuplicates {
         for (int sentenceLength = 0; sentenceLength < sentence2.length; sentenceLength++) {
             words.add(sentence2[sentenceLength]);
         }
-            System.out.println(words);
+        System.out.println(words);
 
         Set<String> unique = new HashSet<String>(words);
-        for (String key : unique){
-            System.out.println(key+": "+ Collections.frequency(words,key));
+        for (String key : unique) {
+            System.out.println(key + ": " + Collections.frequency(words, key));
         }
     }
 }
