@@ -15,18 +15,14 @@ public class ThreeOrFiveMultiples {
         int sum = 0;
 
 
-        for (int i = 3; ; i++) {
+        for (int i = 3; i < 1000; i++) {
             if ((i % 3 == 0) || (i % 5 == 0)) {
                 multiples.add(i);
-                if (sum + i <= 1000){
                     sum += i;
-                }else {
-                    break;
-                }
-                    }
-                }
-        System.out.println("Sum is " + sum);
-        System.out.println("Multiples are " + multiples);
             }
         }
+        System.out.println("Sum is " + sum);
+        System.out.println("Multiples are " + multiples);
+    }
+}
 

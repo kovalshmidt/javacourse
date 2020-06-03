@@ -37,7 +37,7 @@ public class EvenFibonacci {
             previous2 = result;
         }
         for (int evenCheck : fibonacciNumbers) {
-            if (evenCheck % 2 == 0){
+            if (evenCheck % 2 == 0) {
                 evenNumbersSum += evenCheck;
             }
         }

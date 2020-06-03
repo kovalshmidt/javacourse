@@ -13,16 +13,16 @@ public class BigPrimeNumber {
         int factor;
 
         System.out.println("Type in a number");
-        final long Prime = input.nextLong();
+        final long PRIME = input.nextLong();
         //Type in 600851475143
-        factor = primeCheck(Prime);
+        factor = primeCheck(PRIME);
         if (factor != 0) {
             isPrime = false;
             primeFactors.add(factor);
-            factorCheck(primeFactors, Prime, factor);
+            factorCheck(primeFactors, PRIME, factor);
         }
 
-        System.out.println(Prime + " is " + (isPrime ? "" : "not") + " a prime number.");
+        System.out.println(PRIME + " is " + (isPrime ? "" : "not") + " a prime number.");
         if (primeFactors.size() > 0) {
             System.out.println(primeFactors + " are the prime factors.");
             System.out.println("Largest prime factor: " + Collections.max(primeFactors));
@@ -43,7 +43,7 @@ public class BigPrimeNumber {
     //returns all prime factors
     private static void factorCheck(Collection<Integer> primeFactors, long prime, long factor) {
         //other factor (e.g. 2*50 = 100 >> 100/2 = 50)
-        long otherFactor =  (prime / factor);
+        long otherFactor = (prime / factor);
         //lowest prime 2 of 50 >> 2*2*25 >> 2*2*5*5
         long lowerFactor = primeCheck(otherFactor);
         if (lowerFactor != 0) {
