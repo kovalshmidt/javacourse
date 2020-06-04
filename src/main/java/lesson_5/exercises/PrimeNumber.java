@@ -28,7 +28,7 @@ public class PrimeNumber {
     }
 
     //Returns lowest prime factor
-    private static int primeCheck(int prime) {
+    public static int primeCheck(int prime) {
         for (int isDivisible = 2; isDivisible < prime; isDivisible++) {
             if (prime % isDivisible == 0) {
                 return isDivisible;
