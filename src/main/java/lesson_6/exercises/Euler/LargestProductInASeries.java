@@ -27,9 +27,7 @@ package lesson_6.exercises.Euler;
  * Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?
  */
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class LargestProductInASeries {
     public static void main(String[] args) {
@@ -55,30 +53,22 @@ public class LargestProductInASeries {
                 0, 5, 8, 8, 6, 1, 1, 6, 4, 6, 7, 1, 0, 9, 4, 0, 5, 0, 7, 7, 5, 4, 1, 0, 0, 2, 2, 5, 6, 9, 8, 3, 1, 5, 5, 2, 0, 0, 0, 5, 5, 9, 3, 5, 7, 2, 9, 7, 2, 5,
                 7, 1, 6, 3, 6, 2, 6, 9, 5, 6, 1, 8, 8, 2, 6, 7, 0, 4, 2, 8, 2, 5, 2, 4, 8, 3, 6, 0, 0, 8, 2, 3, 2, 5, 7, 5, 3, 0, 4, 2, 0, 7, 5, 2, 9, 6, 3, 4, 5, 0);
 
-        List<Integer> testList = new ArrayList<>();
-        List<Integer> finalList = new ArrayList<>();
+        HashMap<Long, List<Integer>> map = new HashMap<>();
         final int PRODUCTSIZE = 12;
-        int numberTest, biggestNumber = 0;
+        long numberTest;
 
-        for (int numberIndex = 0; numberIndex < bigNumberList.size() - PRODUCTSIZE; numberIndex++) {
+        for (int x = 0; x < bigNumberList.size() - PRODUCTSIZE; x++) {
             numberTest = 1;
-            testList.clear();
-            for (int product = numberIndex; product <= numberIndex + PRODUCTSIZE; product++) {
-                testList.add(bigNumberList.get(product));
-                numberTest *= bigNumberList.get(product);
-
-                if (numberTest == 2091059712){
-                    System.out.println("test");
-                }
-
+            List<Integer> testList = new ArrayList<>();
+            for (int y = x; y <= x + PRODUCTSIZE; y++) {
+                Integer number = bigNumberList.get(y);
+                testList.add(number);
+                numberTest *= number;
             }
-            if (numberTest > biggestNumber) {
-                biggestNumber = numberTest;
-                finalList = testList;
-            }
+            map.put(numberTest, testList);
         }
-
-        System.out.println(biggestNumber);
-        System.out.println(finalList);
+        Long max = map.keySet().stream().max(Comparator.naturalOrder()).get();
+        System.out.println(max);
+        System.out.println(map.get(max));
     }
 }
