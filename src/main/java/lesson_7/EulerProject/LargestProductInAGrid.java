@@ -26,6 +26,7 @@ package lesson_7.EulerProject;
  * <p>
  * The product of these numbers is 26 × 63 × 78 × 14 = 1788696.
  * <p>
+ *     6574608
  * What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?
  */
 
@@ -53,20 +54,15 @@ public class LargestProductInAGrid {
                 {20, 73, 35, 29, 78, 31, 90, 1, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57, 5, 54},
                 {1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48}};
         int[] highestSelection = new int[4];
-        long highestProduct = 1;
+        long highestProduct;
 
-        highestSelection = getRowsAndColumns(gridOfNumbers, highestSelection);
+        highestProduct = getRowsAndColumns(gridOfNumbers, highestSelection);
 
-        for (int calc = 0; calc <= 3; calc++){
-            highestProduct *= highestSelection[calc];
-        }
         System.out.println(highestProduct);
     }
 
-    public static int[] getRowsAndColumns(int[][] gridOfProducts, int[] selection) {
-        int[] highestSelection;
-        long highestProduct = 1, product = 1;
-        highestSelection = selection;
+    public static long getRowsAndColumns(int[][] gridOfProducts, int[] selection) {
+        long highestProduct = 1, product;
         for (int i = 0; i <= 19; i++) {
             for (int m = 0; m <= 16; m++) {
                 product = 1;
@@ -76,13 +72,11 @@ public class LargestProductInAGrid {
                 }
                 if (product > highestProduct) {
                     highestProduct = product;
-                    highestSelection = selection;
                 }
             }
         }
         for (int i = 0; i <= 19; i++) {
             for (int m = 0; m <= 16; m++) {
-                highestProduct = product;
                 product = 1;
                 for (int select = 0; select <= 3; select++) {
                     selection[select] = gridOfProducts[m + select][i];
@@ -90,10 +84,33 @@ public class LargestProductInAGrid {
                 }
                 if (product > highestProduct) {
                     highestProduct = product;
-                    highestSelection = selection;
                 }
             }
         }
-        return highestSelection;
+        for (int i = 0; i <= 16; i++) {
+            for (int m = 0; m <= 16; m++) {
+                product = 1;
+                for (int select = 0; select <= 3; select++) {
+                    selection[select] = gridOfProducts[m + select][i + select];
+                    product = product * selection[select];
+                }
+                if (product > highestProduct) {
+                    highestProduct = product;
+                }
+            }
+        }
+        for (int i = 3; i <= 19; i++) {
+            for (int m = 0; m <= 16; m++) {
+                product = 1;
+                for (int select = 0; select <= 3; select++) {
+                    selection[select] = gridOfProducts[m + select][i - select];
+                    product = product * selection[select];
+                }
+                if (product > highestProduct) {
+                    highestProduct = product;
+                }
+            }
+        }
+        return highestProduct;
     }
 }
