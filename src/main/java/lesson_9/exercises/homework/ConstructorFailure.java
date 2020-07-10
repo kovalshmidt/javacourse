@@ -7,7 +7,7 @@ package lesson_9.exercises.homework;
  */
 
 public class ConstructorFailure {
-    public Exception1()throws Exception
+    public ConstructorFailure()throws Exception
     {
         throw new Exception();
     }
@@ -15,7 +15,7 @@ public class ConstructorFailure {
     public static void main(String[] args) {
         try{
 
-            Exception1 e = new Exception1();
+            ConstructorFailure e = new ConstructorFailure();
         }catch(Exception exception)
         {
             System.out.println("Exception type: " + exception);
