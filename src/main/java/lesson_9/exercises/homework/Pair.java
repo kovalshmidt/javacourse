@@ -30,5 +30,5 @@ public class Pair<F,S> {
     public S getSecond(){
         return this.second;
     }
-    
+
 }
