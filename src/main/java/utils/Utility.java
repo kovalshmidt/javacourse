@@ -32,7 +32,7 @@ public class Utility {
         }
 
 
-        public static boolean isPalindrome(int number) {
+        public static <T extends Number> boolean isPalindrome(T number) {
             StringBuilder reverseNumber = new StringBuilder();
             String letter = String.valueOf(number);
             for (int count = letter.length() - 1; count >= 0; count--) {
