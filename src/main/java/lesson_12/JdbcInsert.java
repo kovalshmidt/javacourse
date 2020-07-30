@@ -11,7 +11,7 @@ public class JdbcInsert {
 
     public static void main(String[] args) {
 
-        String url = "jdbc:mysql://localhost:3306/test?" +
+        String url = "jdbc:mysql://localhost:3306/testdb?" +
                 "useSSl=false?" +
                 "useUnicode=true&" +
                 "useJDBCCompliantTimezoneShift=true&" +
