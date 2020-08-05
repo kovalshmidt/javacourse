@@ -16,9 +16,9 @@ public class JdbcRetrieve {
                 "useLegacyDatetimeCode=false&" +
                 "serverTimezone=UTC";
         String user = "root";
-        String password = "root";
+        String password = "metr0Md@";
 
-        String query = "SELECT * FROM user where name = 'Bob'";
+        String query = "SELECT * FROM user";
 
         try (Connection con = DriverManager.getConnection(url, user, password);
              PreparedStatement pst = con.prepareStatement(query);

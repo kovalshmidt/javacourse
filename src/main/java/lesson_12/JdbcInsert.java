@@ -18,11 +18,11 @@ public class JdbcInsert {
                 "useLegacyDatetimeCode=false&" +
                 "serverTimezone=UTC";
         String user = "root";
-        String password = "root";
+        String password = "metr0Md@";
 
-        int id = 1;
-        String userName = "Bob";
-        String userEmail = "bob@bob.com";
+        int id = 2;
+        String userName = "Martin";
+        String userEmail = "martneb@aol.com";
         String sql = "INSERT INTO User(Id, Name, Email) VALUES(?, ?, ?)";
 
         try (Connection con = DriverManager.getConnection(url, user, password);
