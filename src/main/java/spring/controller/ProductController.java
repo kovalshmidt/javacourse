@@ -4,12 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import spring.model.Products;
+import spring.model.Product;
 import spring.service.ProductService;
 
-import javax.validation.Valid;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.Collection;
 import java.util.Optional;
 import java.util.UUID;
@@ -28,13 +25,13 @@ public class ProductController {
     }
 
     @GetMapping("/all")
-    public Collection<Products> products() {
+    public Collection<Product> products() {
         return productService.findAll();
     }
 
     @GetMapping("/get/{id}") //localhost:8080/user/get/25251514234
     public ResponseEntity getUser(@PathVariable("id") String id) {
-        Optional<Products> products = productService.findById(UUID.fromString(id));
+        Optional<Product> products = productService.findById(UUID.fromString(id));
         return products.map(response -> ResponseEntity.ok().body(response))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }

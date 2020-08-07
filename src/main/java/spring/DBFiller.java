@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
-import spring.model.Products;
+import spring.model.Product;
 import spring.model.User;
 import spring.repository.UserRepository;
 
@@ -41,12 +41,12 @@ public class DBFiller implements CommandLineRunner {
         userRepository.save(admin);
         log.info("User Max was inserted in the database");
 
-        Products drill = new Products();
+        Product drill = new Product();
         drill.setName("Electric drill");
         drill.setDescription("Used for drilling holes in walls");
         drill.setAvailable(31);
 
-        Products screwdriver = new Products();
+        Product screwdriver = new Product();
         screwdriver.setName("Screwdriver");
         screwdriver.setDescription("Tool for getting screws in and out");
         screwdriver.setAvailable(15);

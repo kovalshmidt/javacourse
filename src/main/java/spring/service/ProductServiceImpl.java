@@ -1,7 +1,7 @@
 package spring.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import spring.model.Products;
+import spring.model.Product;
 import spring.repository.ProductRepository;
 
 import java.util.List;
@@ -18,18 +18,18 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Products findByName(String name) {
-        Optional<Products> optional = productRepository.findByName(name);
+    public Product findByName(String name) {
+        Optional<Product> optional = productRepository.findByName(name);
         return optional.orElse(null);
     }
 
     @Override
-    public List<Products> findAll() {
+    public List<Product> findAll() {
         return productRepository.findAll();
     }
 
     @Override
-    public Optional<Products> findById(UUID id) {
+    public Optional<Product> findById(UUID id) {
         return productRepository.findById(id);
     }
 
@@ -39,9 +39,9 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Products save(Products products) {
-        if(products.getAvailable() >= 10) {
-            return productRepository.save(products);
+    public Product save(Product product) {
+        if(product.getAvailable() >= 10) {
+            return productRepository.save(product);
         } else {
             return null;
         }

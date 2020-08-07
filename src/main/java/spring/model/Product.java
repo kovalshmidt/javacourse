@@ -12,8 +12,8 @@ import java.util.UUID;
 @Getter
 @Setter
 @Entity
-@Table(name = "products")
-public class Products {
+@Table(name = "product")
+public class Product {
 
     @Id
     private UUID uuid;
@@ -21,8 +21,8 @@ public class Products {
     private String description;
     private int available;
 
-    public Products(){this.uuid = UUID.randomUUID();}
-    public Products(String name, String description, int available){
+    public Product(){this.uuid = UUID.randomUUID();}
+    public Product(String name, String description, int available){
         this();
         this.name = name;
         this.description = description;

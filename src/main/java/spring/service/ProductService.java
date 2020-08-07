@@ -1,6 +1,6 @@
 package spring.service;
 
-import spring.model.Products;
+import spring.model.Product;
 
 import java.util.List;
 import java.util.Optional;
@@ -8,13 +8,13 @@ import java.util.UUID;
 
 public interface ProductService {
 
-    List<Products> findAll();
+    List<Product> findAll();
 
-    Optional<Products> findById(UUID id);
+    Optional<Product> findById(UUID id);
 
     void deleteById(UUID id);
 
-    Products save(Products user);
+    Product save(Product user);
 
-    Products findByName(String name);
+    Product findByName(String name);
 }
