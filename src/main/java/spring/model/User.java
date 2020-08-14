@@ -1,18 +1,20 @@
 package spring.model;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 import java.util.UUID;
 
 @Getter
 @Setter
 @Entity
 @Table(name = "user")
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class User {
 
     @Id
@@ -22,4 +24,9 @@ public class User {
     private String surname;
     private String email;
     private int age;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
+    @JsonIgnore
+    //    The Jackson annotation @JsonIgnore is used to tell Jackson to ignore a certain property (field) of a Java object.
+    //    The property is ignored both when reading JSON into Java objects, and when writing Java objects into JSON.
+    private List<Product> products;
 }

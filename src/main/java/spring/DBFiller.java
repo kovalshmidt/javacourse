@@ -49,6 +49,7 @@ public class DBFiller implements CommandLineRunner {
         drill.setName("Electric drill");
         drill.setDescription("Used for drilling holes in walls");
         drill.setAvailable(31);
+        drill.setUser(user);
         productRepository.save(drill);
         log.info("Product Drill was inserted in the database");
 
@@ -56,6 +57,7 @@ public class DBFiller implements CommandLineRunner {
         screwdriver.setName("Screwdriver");
         screwdriver.setDescription("Tool for getting screws in and out");
         screwdriver.setAvailable(15);
+        screwdriver.setUser(user);
         productRepository.save(screwdriver);
         log.info("Product Screwdriver was inserted in the database");
 
