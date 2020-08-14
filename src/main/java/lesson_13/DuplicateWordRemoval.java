@@ -1,5 +1,11 @@
 package lesson_13;
 
+/**
+ * Write a program that inputs a sentence from the user (assume no punctuation), then determines and displays the
+ * unique words in alphabetical order. Treat uppercase and lowercase letters the same.
+ * Use Java 8 functionalities
+ */
+
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -8,9 +14,8 @@ public class DuplicateWordRemoval {
         Scanner input = new Scanner(System.in);
         System.out.println("Please type in a sentence with no punctuation:");
         String sentence = input.nextLine().toLowerCase();
-        String[] separatedSentence = sentence.split(" ");
-        Collection<String> words = new ArrayList<>(Arrays.asList(separatedSentence));
-        words.stream().distinct().collect(Collectors.toList()).forEach(System.out::println);
+
+        Arrays.stream(sentence.split(" ")).distinct().forEach(System.out::println);
 
     }
 }
