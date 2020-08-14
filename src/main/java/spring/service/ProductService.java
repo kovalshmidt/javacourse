@@ -1,5 +1,6 @@
 package spring.service;
 
+import org.springframework.stereotype.Service;
 import spring.model.Product;
 
 import java.util.List;

@@ -10,9 +10,7 @@ public class SentenceDuplicates {
         String[] sentence2 = sentence.split(" ");
         ArrayList<String> words = new ArrayList<String>();
 
-        for (int sentenceLength = 0; sentenceLength < sentence2.length; sentenceLength++) {
-            words.add(sentence2[sentenceLength]);
-        }
+        words.addAll(Arrays.asList(sentence2));
         System.out.println(words);
 
         Set<String> unique = new HashSet<String>(words);

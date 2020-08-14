@@ -8,6 +8,7 @@ import spring.model.User;
 import spring.service.UserService;
 
 import javax.validation.Valid;
+import javax.xml.ws.Response;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Collection;
@@ -17,8 +18,7 @@ import java.util.UUID;
 @RestController
 @CrossOrigin
 @RequestMapping("/user")
-public class
-UserController {
+public class UserController {
 
     //POST(to save something) GET(to retrieve something) DELETE(to delete) PUT(to update)
 
@@ -42,7 +42,17 @@ UserController {
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-//    @PostMapping("/save")
+    //Save a user passed as parameter without id
+    @PostMapping("/save")
+    //it expects a uri of POST method with path /user/save (Post means that you have to pass an object)
+    public ResponseEntity<User> userSave(@Valid @RequestBody User user) throws URISyntaxException { //receive the object passed with POST method, validate it
+        //save the passed object into the database by using useService and then, save the saved object in a variable called result
+        User result = userService.save(user);
+        //return a ResponseEntity with saved User (saved it means that an id was assigned to it in the process of saving)
+        return ResponseEntity.ok(result);
+    }
+
+    //    @PostMapping("/save")
 //    public ResponseEntity<User> user(@Valid @RequestBody User user) throws URISyntaxException {
 //        User result = userService.save(user);
 //        return ResponseEntity.created(new URI("/api/user/" + result.getId())).body(result);
@@ -54,7 +64,7 @@ UserController {
 //        return ResponseEntity.ok().body(result);
 //    }
 //
-    @GetMapping("/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteUser(@PathVariable String id) {
         userService.deleteById(UUID.fromString(id));
         return ResponseEntity.ok().build();

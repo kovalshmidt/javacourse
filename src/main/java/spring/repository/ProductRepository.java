@@ -7,7 +7,7 @@ import spring.model.Product;
 import java.util.Optional;
 import java.util.UUID;
 
-@Repository
+@Repository // = @Component, @Service @Controller
 public interface ProductRepository extends JpaRepository<Product, UUID> {
 
     // SELECT * FROM user WHERE id = ?;

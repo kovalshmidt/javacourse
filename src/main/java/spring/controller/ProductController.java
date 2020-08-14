@@ -5,12 +5,18 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import spring.model.Product;
+import spring.model.User;
 import spring.service.ProductService;
 
+import javax.validation.Valid;
+import java.net.URISyntaxException;
 import java.util.Collection;
 import java.util.Optional;
 import java.util.UUID;
 
+@RestController
+@CrossOrigin
+@RequestMapping("/product")
 public class ProductController {
 
 
@@ -29,11 +35,20 @@ public class ProductController {
         return productService.findAll();
     }
 
-    @GetMapping("/get/{id}") //localhost:8080/user/get/25251514234
-    public ResponseEntity getUser(@PathVariable("id") String id) {
+    @GetMapping("/get/{id}") //localhost:8080/product/get/25251514234
+    public ResponseEntity getProduct(@PathVariable("id") String id) {
         Optional<Product> products = productService.findById(UUID.fromString(id));
         return products.map(response -> ResponseEntity.ok().body(response))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    }
+
+    @PostMapping("/save")
+    //it expects a uri of POST method with path /product/save (Post means that you have to pass an object)
+    public ResponseEntity<Product> productSave(@Valid @RequestBody Product product) throws URISyntaxException { //receive the object passed with POST method, validate it
+        //save the passed object into the database by using ProductService and then, save the saved object in a variable called result
+        Product result = productService.save(product);
+        //return a ResponseEntity with saved Product (saved it means that an id was assigned to it in the process of saving)
+        return ResponseEntity.ok(result);
     }
 
     //    @PostMapping("/save")
@@ -48,7 +63,7 @@ public class ProductController {
 //        return ResponseEntity.ok().body(result);
 //    }
 //
-    @GetMapping("/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteUser(@PathVariable String id) {
         productService.deleteById(UUID.fromString(id));
         return ResponseEntity.ok().build();

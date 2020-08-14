@@ -1,6 +1,7 @@
 package spring.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import spring.model.Product;
 import spring.repository.ProductRepository;
 
@@ -8,9 +9,13 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+@Service
 public class ProductServiceImpl implements ProductService {
 
     private ProductRepository productRepository;
+
+    //ProductRepository pr = new ProductRepository(....)
+    //ProductServiceImpl psi = new ProductServiceImpl(productRepository)
 
     @Autowired
     public ProductServiceImpl(ProductRepository productRepository) {
@@ -40,7 +45,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product save(Product product) {
-        if(product.getAvailable() >= 10) {
+        if(product.getAvailable() >= 1) {
             return productRepository.save(product);
         } else {
             return null;

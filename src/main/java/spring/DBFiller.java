@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 import spring.model.Product;
 import spring.model.User;
+import spring.repository.ProductRepository;
 import spring.repository.UserRepository;
 
 @Slf4j
@@ -15,10 +16,13 @@ import spring.repository.UserRepository;
 public class DBFiller implements CommandLineRunner {
 
     private UserRepository userRepository;
+    private ProductRepository productRepository;
 
     @Autowired
-    public DBFiller(UserRepository userRepository) {
+    public DBFiller(UserRepository userRepository,ProductRepository productRepository) {
+
         this.userRepository = userRepository;
+        this.productRepository = productRepository;
     }
 
     @Override
@@ -45,11 +49,17 @@ public class DBFiller implements CommandLineRunner {
         drill.setName("Electric drill");
         drill.setDescription("Used for drilling holes in walls");
         drill.setAvailable(31);
+        productRepository.save(drill);
+        log.info("Product Drill was inserted in the database");
 
         Product screwdriver = new Product();
         screwdriver.setName("Screwdriver");
         screwdriver.setDescription("Tool for getting screws in and out");
         screwdriver.setAvailable(15);
+        productRepository.save(screwdriver);
+        log.info("Product Screwdriver was inserted in the database");
 
+
+        log.info("Database initialized...");
     }
 }
