@@ -4,7 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import spring.Mapper;
 import spring.model.Product;
+import spring.model.ProductViewModel;
 import spring.model.User;
 import spring.service.ProductService;
 
@@ -13,6 +15,7 @@ import java.net.URISyntaxException;
 import java.util.Collection;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @RestController
 @CrossOrigin
@@ -24,15 +27,19 @@ public class ProductController {
 
 
     private ProductService productService;
+    private Mapper mapper;
 
     @Autowired
-    public ProductController(ProductService productService) {
+    public ProductController(ProductService productService, Mapper mapper) {
         this.productService = productService;
+        this.mapper = mapper;
     }
 
     @GetMapping("/all")
-    public Collection<Product> products() {
-        return productService.findAll();
+    public Collection<ProductViewModel> products() {
+        return productService.findAll().stream()
+                .map(x -> mapper.convertProductToViewModel(x))
+                .collect(Collectors.toList());
     }
 
     @GetMapping("/get/{id}") //localhost:8080/product/get/25251514234
