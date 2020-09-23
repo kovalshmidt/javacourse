@@ -72,7 +72,7 @@ public class Mapper {
         return product;
     }
 
-    //A method that transforms UserViewModel into User entity
+    //A method that transforms User entity into UserViewModel
     public UserViewModel convertUserToViewModel(User user) {
         UserViewModel userViewModel = new UserViewModel();
         //Set fields
@@ -84,16 +84,34 @@ public class Mapper {
         List<Product> products = user.getProducts();
         List<ProductViewModel> productViewModels = new ArrayList<>();
         for (Product product : products) {
-            //Transform product into productviewmodel
+            //Transform product into productViewModel
             ProductViewModel productViewModel = convertProductToViewModel(product);
-            //Put Productviewmodel into Viewmodel list
+            //Put ProductViewModel into ViewModel list
             productViewModels.add(productViewModel);
         }
         userViewModel.setProducts(productViewModels);
         return userViewModel;
     }
 
-    //A method that transforms User entity into UserViewModel
+    //A method that transforms UserViewModel into User entity
+    public User convertUserViewModelToUser(UserViewModel userViewModel){
+        User user = new User();
+        //Set Fields
+        user.setUuid(UUID.fromString(userViewModel.getUuid()));
+        user.setName(userViewModel.getName());
+        user.setSurname(userViewModel.getSurname());
+        user.setAge(userViewModel.getAge());
+        user.setEmail(userViewModel.getEmail());
+        List<ProductViewModel> productViewModels = userViewModel.getProducts();
+        List<Product> products = new ArrayList<>();
+        for (ProductViewModel productViewModel : productViewModels){
+        Product product = viewModelToProduct(productViewModel);
+        products.add(product);
+        }
+        user.setProducts(products);
+        return user;
+    }
     //Write a test in MapperTest for convertUserToViewModel
+
     //Write a test in MapperTest for the ViewModelToUser
 }

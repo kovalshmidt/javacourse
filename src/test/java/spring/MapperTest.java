@@ -9,9 +9,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 import spring.model.Product;
 import spring.model.ProductViewModel;
 import spring.model.User;
+import spring.model.UserViewModel;
 import spring.repository.ProductRepository;
 import spring.repository.UserRepository;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -77,6 +80,35 @@ class MapperTest {
         softAssertions.assertThat(product.getDescription()).isEqualTo(productViewModel.getDescription());
         softAssertions.assertThat(product.getUser().getUuid().toString()).isEqualTo(productViewModel.getUserId());
         softAssertions.assertThat(product.getUuid().toString()).isEqualTo(productViewModel.getUuid());
+    }
+
+    @Test
+    public void testUserToViewModel(){
+        Product productTest = new Product();
+        productTest.setName("Good Stuff");
+        productTest.setDescription("Only the best for the customer");
+        productTest.setAvailable(42);
+        productRepository.save(productTest);
+
+        User userTest = new User();
+        userTest.setName("John");
+        userTest.setSurname("Doe");
+        userTest.setAge(21);
+        userTest.setEmail("joe@doe.com");
+        List<Product> products = new ArrayList<>();
+        products.add(productTest);
+        userTest.setProducts(products);
+        userRepository.save(userTest);
+
+
+        UserViewModel userViewModel = mapper.convertUserToViewModel(userTest);
+        softAssertions.assertThat(userTest.getName()).isEqualTo(userViewModel.getName());
+        softAssertions.assertThat(userTest.getSurname()).isEqualTo(userViewModel.getSurname());
+        softAssertions.assertThat(userTest.getAge()).isEqualTo(userViewModel.getAge());
+        softAssertions.assertThat(userTest.getEmail()).isEqualTo(userViewModel.getEmail());
+        softAssertions.assertThat(userTest.getUuid().toString()).isEqualTo(userViewModel.getUuid());
+        softAssertions.assertThat(userTest.getProducts()).isEqualTo(userViewModel.getProducts());
+
     }
 
     @AfterAll
