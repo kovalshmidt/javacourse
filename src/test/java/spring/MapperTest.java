@@ -110,6 +110,32 @@ class MapperTest {
         softAssertions.assertThat(userTest.getProducts()).isEqualTo(userViewModel.getProducts());
 
     }
+    @Test
+    public void testViewModelToUser(){
+        ProductViewModel productTest = new ProductViewModel();
+        productTest.setName("Good Stuff");
+        productTest.setDescription("Only the best for the customer");
+        productTest.setAvailable(42);
+
+        UserViewModel userViewModelTest = new UserViewModel();
+        userViewModelTest.setName("John");
+        userViewModelTest.setSurname("Doe");
+        userViewModelTest.setAge(21);
+        userViewModelTest.setEmail("joe@doe.com");
+        List<ProductViewModel> products = new ArrayList<>();
+        products.add(productTest);
+        userViewModelTest.setProducts(products);
+
+
+        User user = mapper.convertUserViewModelToUser(userViewModelTest);
+        softAssertions.assertThat(userViewModelTest.getName()).isEqualTo(user.getName());
+        softAssertions.assertThat(userViewModelTest.getSurname()).isEqualTo(user.getSurname());
+        softAssertions.assertThat(userViewModelTest.getAge()).isEqualTo(user.getAge());
+        softAssertions.assertThat(userViewModelTest.getEmail()).isEqualTo(user.getEmail());
+        softAssertions.assertThat(userViewModelTest.getUuid()).isEqualTo(user.getUuid().toString());
+        softAssertions.assertThat(userViewModelTest.getProducts()).isEqualTo(user.getProducts());
+
+    }
 
     @AfterAll
     public static void end() {
