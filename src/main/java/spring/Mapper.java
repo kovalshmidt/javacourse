@@ -1,7 +1,5 @@
 package spring;
 
-import lombok.ToString;
-import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import spring.model.Product;
@@ -10,10 +8,8 @@ import spring.model.User;
 import spring.model.UserViewModel;
 import spring.service.UserService;
 
-import javax.validation.constraints.Null;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
 @Component
@@ -94,7 +90,7 @@ public class Mapper {
     }
 
     //A method that transforms UserViewModel into User entity
-    public User convertUserViewModelToUser(UserViewModel userViewModel){
+    public User convertUserViewModelToUser(UserViewModel userViewModel) {
         User user = new User();
         //Set Fields
         user.setUuid(UUID.fromString(userViewModel.getUuid()));
@@ -104,9 +100,9 @@ public class Mapper {
         user.setEmail(userViewModel.getEmail());
         List<ProductViewModel> productViewModels = userViewModel.getProducts();
         List<Product> products = new ArrayList<>();
-        for (ProductViewModel productViewModel : productViewModels){
-        Product product = viewModelToProduct(productViewModel);
-        products.add(product);
+        for (ProductViewModel productViewModel : productViewModels) {
+            Product product = viewModelToProduct(productViewModel);
+            products.add(product);
         }
         user.setProducts(products);
         return user;

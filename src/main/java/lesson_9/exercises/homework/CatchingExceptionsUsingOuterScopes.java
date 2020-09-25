@@ -10,25 +10,25 @@ package lesson_9.exercises.homework;
 public class CatchingExceptionsUsingOuterScopes {
 
     //This method trhows IndexOutOfBOundsException
-    public static void innerScope () throws IndexOutOfBoundsException{
+    public static void innerScope() throws IndexOutOfBoundsException {
         throw new IndexOutOfBoundsException("Inner Scope");
     }
 
     //This method handles NullPointerException but can throw IndexOutOfBoundsException
-    public static void outerScope () throws Exception {
-            try{
-                innerScope();
-            }catch (NullPointerException e){
-                System.out.println("Inner Scope");
-            }
+    public static void outerScope() throws Exception {
+        try {
+            innerScope();
+        } catch (NullPointerException e) {
+            System.out.println("Inner Scope");
+        }
 
     }
 
     //This Method handles any Exception
     public static void main(String[] args) {
-        try{
+        try {
             outerScope();
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Outer Scope");
         }
     }

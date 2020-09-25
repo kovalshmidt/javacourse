@@ -1,6 +1,6 @@
 package lesson_5.abstraction;
 
-public class Doberman extends Dog{
+public class Doberman extends Dog {
 
     public Doberman(String name) {
         super(name);

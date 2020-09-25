@@ -18,7 +18,7 @@ public class Asterisk {
         topBottom = bounderyCreation(squareSizeGoal, topBottom);
     }
 
-    private static void middleLines(int squareSizeGoal, int middleOuter , int middle) {
+    private static void middleLines(int squareSizeGoal, int middleOuter, int middle) {
         System.out.println("");
         do {
             System.out.print("*  ");

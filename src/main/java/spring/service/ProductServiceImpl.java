@@ -45,7 +45,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product save(Product product) {
-        if(product.getAvailable() >= 1) {
+        if (product.getAvailable() >= 1) {
             return productRepository.save(product);
         } else {
             return null;

@@ -7,6 +7,7 @@ public class Triangle implements TwoDShape {
 
     private double lengthX, lengthY, lengthZ;
     private double height;
+
     @Override
     public double perimeter() {
         return lengthX + lengthY + lengthZ;
@@ -14,6 +15,6 @@ public class Triangle implements TwoDShape {
 
     @Override
     public double getArea() {
-        return (height*lengthX)/2;
+        return (height * lengthX) / 2;
     }
 }

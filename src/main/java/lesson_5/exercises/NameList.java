@@ -9,23 +9,23 @@ public class NameList {
         Scanner input = new Scanner(System.in);
         Collection<String> firstName = new HashSet<>();
         System.out.println("type in names or 'stop' to finish:");
-        for(;;) {
+        for (; ; ) {
             String name = input.next();
-            if (name.equals("stop")){
+            if (name.equals("stop")) {
                 break;
-            }else{
+            } else {
                 firstName.add(name);
             }
         }
         System.out.println("Check for names:");
         String check = input.next();
         boolean checkEm = false;
-        for (String names : firstName){
-            if (check.equals(names)){
+        for (String names : firstName) {
+            if (check.equals(names)) {
                 checkEm = true;
                 break;
             }
         }
-        System.out.println("The name "+check+(checkEm ? " exists.":" doesn't exist."));
+        System.out.println("The name " + check + (checkEm ? " exists." : " doesn't exist."));
     }
 }

@@ -1,7 +1,5 @@
 package lesson_4.exercises.TTT;
 
-import com.sun.xml.internal.ws.policy.EffectiveAlternativeSelector;
-
 public class TicTacToeField {
     private enum Field {
         X,

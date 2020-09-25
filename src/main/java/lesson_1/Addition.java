@@ -1,6 +1,7 @@
 package lesson_1;
 
 // Addition program that inputs two numbers then displays their sum.
+
 import java.util.Scanner;
 
 public class Addition {

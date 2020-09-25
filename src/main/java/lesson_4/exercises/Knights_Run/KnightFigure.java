@@ -24,7 +24,7 @@ public class KnightFigure {
     }
 
     public void set_Position(int factorY, int factorX) {
-        if (((yPosition + factorY <= 7) && (yPosition + factorY >= 0)) && ((xPosition + factorX <= 7) && (xPosition + factorX >= 0))){
+        if (((yPosition + factorY <= 7) && (yPosition + factorY >= 0)) && ((xPosition + factorX <= 7) && (xPosition + factorX >= 0))) {
             this.yPosition += factorY;
             this.xPosition += factorX;
         }
@@ -58,7 +58,7 @@ public class KnightFigure {
         }
     }
 
-    public void reverseMove(int previousX,int previousY) {
+    public void reverseMove(int previousX, int previousY) {
         setXPosition(previousX);
         setYPosition(previousY);
     }
@@ -83,8 +83,8 @@ public class KnightFigure {
         System.out.println();
     }
 
-    public static boolean checkBoard(int[][] chessboard){
-        boolean checkEm =true;
+    public static boolean checkBoard(int[][] chessboard) {
+        boolean checkEm = true;
         for (int i = 0; i < 8; i++) {
             for (int y = 0; y <= 7; y++) {
                 if (chessboard[i][y] == 0) {
@@ -95,8 +95,9 @@ public class KnightFigure {
         }
         return checkEm;
     }
-    public static int highestNumber(int[][] chessboard){
-         int bestNumber = 0;
+
+    public static int highestNumber(int[][] chessboard) {
+        int bestNumber = 0;
         for (int i = 0; i < 8; i++) {
             for (int y = 0; y <= 7; y++) {
                 if (chessboard[i][y] > bestNumber) {

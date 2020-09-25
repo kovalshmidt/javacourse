@@ -8,8 +8,6 @@ import spring.model.User;
 import spring.service.UserService;
 
 import javax.validation.Valid;
-import javax.xml.ws.Response;
-import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Collection;
 import java.util.Optional;

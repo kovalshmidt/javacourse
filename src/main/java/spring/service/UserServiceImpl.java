@@ -32,7 +32,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Optional<User> findById(UUID uuid) {
-        return  userRepository.findById(uuid);
+        return userRepository.findById(uuid);
     }
 
     @Override
@@ -42,7 +42,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User save(User user) {
-        if(user.getAge() >= 18) {
+        if (user.getAge() >= 18) {
             return userRepository.save(user);
         } else {
             return null;

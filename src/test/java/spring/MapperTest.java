@@ -17,7 +17,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class MapperTest {
     @Autowired
@@ -34,13 +33,13 @@ class MapperTest {
     }
 
     @Test
-    public void testConvertProductToViewModel(){
+    public void testConvertProductToViewModel() {
         //Create a user object, populate with date and persist in database
         User userTest = new User();
-            userTest.setName("John");
-            userTest.setSurname("Doe");
-            userTest.setAge(21);
-            userTest.setEmail("joe@doe.com");
+        userTest.setName("John");
+        userTest.setSurname("Doe");
+        userTest.setAge(21);
+        userTest.setEmail("joe@doe.com");
         userRepository.save(userTest);
         //Create a product Object, populate with data and persist in database
         Product productTest = new Product();
@@ -58,8 +57,9 @@ class MapperTest {
         softAssertions.assertThat(productTest.getUser().getUuid().toString()).isEqualTo(viewModelTest.getUserId());
         softAssertions.assertThat(productTest.getUuid().toString()).isEqualTo(viewModelTest.getUuid());
     }
+
     @Test
-    public void testViewModelToProduct(){
+    public void testViewModelToProduct() {
         User userTest = new User();
         userTest.setName("John");
         userTest.setSurname("Doe");
@@ -83,7 +83,7 @@ class MapperTest {
     }
 
     @Test
-    public void testUserToViewModel(){
+    public void testUserToViewModel() {
         Product productTest = new Product();
         productTest.setName("Good Stuff");
         productTest.setDescription("Only the best for the customer");
@@ -110,8 +110,9 @@ class MapperTest {
         softAssertions.assertThat(userTest.getProducts()).isEqualTo(userViewModel.getProducts());
 
     }
+
     @Test
-    public void testViewModelToUser(){
+    public void testViewModelToUser() {
         ProductViewModel productTest = new ProductViewModel();
         productTest.setName("Good Stuff");
         productTest.setDescription("Only the best for the customer");

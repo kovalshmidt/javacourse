@@ -19,7 +19,7 @@ public class DBFiller implements CommandLineRunner {
     private ProductRepository productRepository;
 
     @Autowired
-    public DBFiller(UserRepository userRepository,ProductRepository productRepository) {
+    public DBFiller(UserRepository userRepository, ProductRepository productRepository) {
 
         this.userRepository = userRepository;
         this.productRepository = productRepository;

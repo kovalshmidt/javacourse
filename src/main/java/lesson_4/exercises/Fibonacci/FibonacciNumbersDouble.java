@@ -14,19 +14,20 @@ public class FibonacciNumbersDouble {
         //highest Number: 1477 >> 1.3069892237633987E308 before infinity
 
     }
-    public static double FibonacciResultDouble(double number){
+
+    public static double FibonacciResultDouble(double number) {
         double previous1 = 0;
         double previous2 = 1;
         double result = 1;
-        for (int i = 0;i<= number-3;i++){
+        for (int i = 0; i <= number - 3; i++) {
             result = previous1 + previous2;
             previous1 = previous2;
             previous2 = result;
         }
-            if (number == 1){
-                return 0;
-            }
-                else{
-         return result;}
+        if (number == 1) {
+            return 0;
+        } else {
+            return result;
+        }
     }
 }

@@ -1,7 +1,7 @@
 package lesson_3.exercises;
 
 /**
- *Write an application that plays “guess the number” as follows: Your program chooses the
+ * Write an application that plays “guess the number” as follows: Your program chooses the
  * number to be guessed by selecting a random integer in the range 1 to 1000. The
  * application displays the prompt Guess a number between 1 and 1000. The player inputs a
  * first guess. If the player's guess is incorrect, your program should display Too high. Try
@@ -11,8 +11,8 @@ package lesson_3.exercises;
  * whether to play again.
  */
 
-import java.util.Scanner;
 import java.util.Random;
+import java.util.Scanner;
 
 
 public class NumbersGame {
@@ -24,7 +24,7 @@ public class NumbersGame {
             int truth = RNG();
             System.out.println("Try to guess the number between 1 and 1000:");
             boolean foundIt = false;
-            int  tries = 0;
+            int tries = 0;
             do {
                 guess = input.nextInt();
                 tries++;
@@ -51,6 +51,6 @@ public class NumbersGame {
     }
 
     private static int RNG() {
-        return new Random().nextInt(1000)+1;
+        return new Random().nextInt(1000) + 1;
     }
 }

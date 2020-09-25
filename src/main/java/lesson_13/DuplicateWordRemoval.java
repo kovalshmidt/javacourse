@@ -6,8 +6,8 @@ package lesson_13;
  * Use Java 8 functionalities
  */
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class DuplicateWordRemoval {
     public static void main(String[] args) {

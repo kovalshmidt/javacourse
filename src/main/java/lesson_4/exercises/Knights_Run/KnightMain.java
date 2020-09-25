@@ -94,7 +94,7 @@ public class KnightMain {
                 System.out.println("valid move");
             } else {
                 //reverse move and return to previous r value
-                if(x != knight.get_xPosition() && y != knight.get_yPosition()) {
+                if (x != knight.get_xPosition() && y != knight.get_yPosition()) {
                     knight.reverseMove(x, y);
                 }
                 r--;

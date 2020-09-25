@@ -20,7 +20,7 @@ public class TwelveDays {
                     dayString = " " + day + "th ";
                     break;
             }
-            System.out.println("On the"+dayString+"day of Christmas my true love sent to me:\n");
+            System.out.println("On the" + dayString + "day of Christmas my true love sent to me:\n");
             switch (day) {
                 case 12:
                     System.out.println("Twelve Drummers Drumming");

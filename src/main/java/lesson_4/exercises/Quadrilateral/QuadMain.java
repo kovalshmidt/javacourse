@@ -13,13 +13,12 @@ public class QuadMain {
 
         Rectangle rectangle = makeRectangle();
         System.out.println("Rectangle");
-        printSize(rectangle.getVectorA(),rectangle.getVectorB(),rectangle.getVectorC(),rectangle.getVectorD(),rectangle.getHeight(),rectangle.getArea());
+        printSize(rectangle.getVectorA(), rectangle.getVectorB(), rectangle.getVectorC(), rectangle.getVectorD(), rectangle.getHeight(), rectangle.getArea());
 
         Square square = makeSquare();
         System.out.println("Square");
-        printSize(square.getVectorA(),square.getVectorB(),square.getVectorC(),square.getVectorD(),square.getHeight(),square.getArea());
+        printSize(square.getVectorA(), square.getVectorB(), square.getVectorC(), square.getVectorD(), square.getHeight(), square.getArea());
     }
-
 
 
     private static void printSize(double vectorA, double vectorB, double vectorC, double vectorD, double height, double area) {
@@ -32,7 +31,7 @@ public class QuadMain {
         System.out.println();
     }
 
-    private static Square makeSquare(){
+    private static Square makeSquare() {
         Square square = new Square();
         square.setPointA(3, 5);
         square.setPointB(8, 5);
@@ -42,7 +41,7 @@ public class QuadMain {
         return square;
     }
 
-    private static Rectangle makeRectangle(){
+    private static Rectangle makeRectangle() {
         Rectangle rectangle = new Rectangle();
         rectangle.setPointA(0, 3);
         rectangle.setPointB(8, 3);

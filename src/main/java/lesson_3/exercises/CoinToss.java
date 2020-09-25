@@ -30,12 +30,10 @@ public class CoinToss {
                     System.out.println("Tails");
                     tails++;
                 }
-            }else
-            if (answer.equals("finish")) {
+            } else if (answer.equals("finish")) {
                 loop = false;
                 System.out.println("Heads: " + heads + " Tails: " + tails);
-            }
-            else{
+            } else {
                 System.out.println("Unclear answer. toss/finish acceptable answers");
             }
         } while (loop);

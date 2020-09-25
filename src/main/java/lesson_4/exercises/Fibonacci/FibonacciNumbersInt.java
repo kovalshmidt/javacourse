@@ -14,19 +14,20 @@ public class FibonacciNumbersInt {
         //highest Number: 47 >>1836311903
 
     }
-    public static int FibonacciResultInt(int number){
+
+    public static int FibonacciResultInt(int number) {
         int previous1 = 0;
         int previous2 = 1;
         int result = 1;
-        for (int i = 0;i<= number-3;i++){
+        for (int i = 0; i <= number - 3; i++) {
             result = previous1 + previous2;
             previous1 = previous2;
             previous2 = result;
         }
-            if (number == 1){
-                return 0;
-            }
-                else{
-         return result;}
+        if (number == 1) {
+            return 0;
+        } else {
+            return result;
+        }
     }
 }

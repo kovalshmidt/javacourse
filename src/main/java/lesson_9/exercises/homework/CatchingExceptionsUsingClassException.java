@@ -28,12 +28,12 @@ public class CatchingExceptionsUsingClassException {
         } catch (NullPointerException nullPointerException) {
             System.out.println("please type in something!");
         } catch (ExceptionB exB) {
-                System.out.println("Number is higher than 5");
-        } catch (ExceptionA exA){
+            System.out.println("Number is higher than 5");
+        } catch (ExceptionA exA) {
             System.out.println("Number is higher than 10");
-        } catch (IOException ioException){
+        } catch (IOException ioException) {
             ioException.getLocalizedMessage();
-        }finally {
+        } finally {
             System.out.println("Number is " + number);
         }
     }

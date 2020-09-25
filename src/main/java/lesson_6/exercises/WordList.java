@@ -6,7 +6,10 @@ package lesson_6.exercises;
  * use of streams.
  */
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class WordList {
@@ -22,9 +25,9 @@ public class WordList {
 
         System.out.println(words);
 
-       List<String> sortedList = words.stream().sorted().collect(Collectors.toList());
+        List<String> sortedList = words.stream().sorted().collect(Collectors.toList());
 
-       sortedList.forEach(System.out::println);
+        sortedList.forEach(System.out::println);
 
     }
 }

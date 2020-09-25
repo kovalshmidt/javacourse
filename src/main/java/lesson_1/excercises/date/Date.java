@@ -41,7 +41,7 @@ public class Date {
         return year;
     }
 
-    public String displayDate(){
-        return this.day+"/"+this.month+"/"+this.year;
+    public String displayDate() {
+        return this.day + "/" + this.month + "/" + this.year;
     }
 }

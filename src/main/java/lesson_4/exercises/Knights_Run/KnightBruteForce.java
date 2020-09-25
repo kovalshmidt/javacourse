@@ -61,10 +61,10 @@ public class KnightBruteForce {
                         lockDown++;
                         r--;
                         knight.reverseMove(x, y);
-                        if (lockDown > 80){
+                        if (lockDown > 80) {
                             highestResult[test] = KnightFigure.highestNumber(chessboard);
                             success[test] = false;
-                            System.out.println(test+1 +".");
+                            System.out.println(test + 1 + ".");
                             KnightFigure.printBoard(chessboard);
                             System.out.println("Knight cornered");
                             break;
@@ -74,13 +74,13 @@ public class KnightBruteForce {
                 }
                 //KnightFigure.printBoard(chessboard);
             }
-            System.out.println(test+1+".");
+            System.out.println(test + 1 + ".");
             KnightFigure.printBoard(chessboard);
             success[test] = KnightFigure.checkBoard(chessboard);
             highestResult[test] = KnightFigure.highestNumber(chessboard);
         }
-        for(int test = 0; test <= 999; test++){
-            System.out.println((test+1)+". "+highestResult[test] + " " + (success[test]? "Complete Run":"not complete" ));
+        for (int test = 0; test <= 999; test++) {
+            System.out.println((test + 1) + ". " + highestResult[test] + " " + (success[test] ? "Complete Run" : "not complete"));
         }
     }
 

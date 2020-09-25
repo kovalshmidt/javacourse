@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.*;
 import spring.Mapper;
 import spring.model.Product;
 import spring.model.ProductViewModel;
-import spring.model.User;
 import spring.service.ProductService;
 
 import javax.validation.Valid;

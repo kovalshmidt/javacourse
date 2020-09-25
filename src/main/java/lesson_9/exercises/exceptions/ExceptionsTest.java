@@ -26,7 +26,7 @@ public class ExceptionsTest {
             nullPoints.getLocalizedMessage();
 //        }catch(Exception exception){
 //            System.out.println("General Exception");
-        }finally {
+        } finally {
             System.out.println("This is finally");
         }
     }

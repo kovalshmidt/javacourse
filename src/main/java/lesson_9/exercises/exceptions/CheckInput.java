@@ -9,8 +9,8 @@ public class CheckInput {
         Scanner input = new Scanner(System.in);
         int number = 0;
 
-            System.out.println("Type in a number:");
-            isError(input);
+        System.out.println("Type in a number:");
+        isError(input);
 
     }
 

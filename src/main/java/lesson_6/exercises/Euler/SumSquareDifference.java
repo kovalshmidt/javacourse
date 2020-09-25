@@ -14,15 +14,15 @@ package lesson_6.exercises.Euler;
 
 public class SumSquareDifference {
     public static void main(String[] args) {
-        int sumOfSquare = 0, squareOfSum = 0,difference;
+        int sumOfSquare = 0, squareOfSum = 0, difference;
         for (int m = 1; m <= 100; m++) {
-            sumOfSquare += Math.pow(m,2);
+            sumOfSquare += Math.pow(m, 2);
             squareOfSum += m;
         }
-        squareOfSum = (int) Math.pow(squareOfSum,2);
+        squareOfSum = (int) Math.pow(squareOfSum, 2);
         System.out.println("Sum of the square: " + sumOfSquare);
         System.out.println("Square of the sum: " + squareOfSum);
-        difference = squareOfSum -sumOfSquare;
+        difference = squareOfSum - sumOfSquare;
         System.out.println("Difference: " + difference);
 
     }

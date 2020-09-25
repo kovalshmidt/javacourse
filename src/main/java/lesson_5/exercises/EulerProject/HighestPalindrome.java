@@ -2,9 +2,7 @@ package lesson_5.exercises.EulerProject;
 
 import utils.Utility;
 
-import java.util.Collection;
 import java.util.Collections;
-import java.util.LinkedHashSet;
 import java.util.LinkedList;
 
 public class HighestPalindrome {

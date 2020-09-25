@@ -23,8 +23,8 @@ public class OrderOfCatchBlocks {
         } catch (ExceptionA exA) {
             System.out.println("Number is higher than 10");
             //ExceptionB already caught by ExceptionA
-        //} catch (ExceptionB exB) {
-        //    System.out.println("Number is higher than 5");
+            //} catch (ExceptionB exB) {
+            //    System.out.println("Number is higher than 5");
         } catch (IOException ioException) {
             ioException.getLocalizedMessage();
         } finally {

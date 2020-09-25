@@ -12,9 +12,9 @@ public class Homework4_2 {
         System.out.println("The second number is:");
         number2 = input.nextInt(); //Input second Int
         if (number1 > number2)
-            System.out.println(number1 + " is bigger then "+ number2);
+            System.out.println(number1 + " is bigger then " + number2);
         if (number1 < number2)
-            System.out.println(number1 + " is smaller then "+ number2);
+            System.out.println(number1 + " is smaller then " + number2);
         if (number1 == number2)
             System.out.println("These numbers are equal");
     }

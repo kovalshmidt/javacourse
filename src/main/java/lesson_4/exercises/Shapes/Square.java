@@ -14,6 +14,6 @@ public class Square implements TwoDShape {
 
     @Override
     public double getArea() {
-        return Math.pow(lengthXY,2);
+        return Math.pow(lengthXY, 2);
     }
 }

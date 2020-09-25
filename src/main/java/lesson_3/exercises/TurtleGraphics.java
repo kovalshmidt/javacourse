@@ -77,7 +77,7 @@ public class TurtleGraphics {
         Turtle.executeOrder(canvas, painter, order, length);
         order = 1;
         Turtle.executeOrder(canvas, painter, order, length);
-        order=3;
+        order = 3;
         Turtle.executeOrder(canvas, painter, order, length);
         order = 6;
         Turtle.executeOrder(canvas, painter, order, length);

@@ -43,8 +43,7 @@ public class EmployeeTest {
             System.out.println(emp1Name + " Salary: " + emp1Salary);
             System.out.println();
             System.out.println(emp2Name + " Salary: " + emp2Salary);
-        }
-        else {
+        } else {
             System.out.println("No raise given");
         }
     }

@@ -6,7 +6,7 @@ public class Square extends Rectangle {
     }
 
     public double getArea() {
-        this.area = Math.pow(getVectorA(),2);
+        this.area = Math.pow(getVectorA(), 2);
         return area;
     }
 }

@@ -32,11 +32,11 @@ public class Homework4_3 {
     private static int getSmallest(int a, int b, int c) {
         int smallest = a;
 
-        if(b < smallest) {
-             smallest = b;
+        if (b < smallest) {
+            smallest = b;
         }
 
-        if(c < smallest) {
+        if (c < smallest) {
             smallest = c;
         }
 
@@ -46,11 +46,11 @@ public class Homework4_3 {
     private static int getLargest(int a, int b, int c) {
         int largest = a;
 
-        if(b > largest) {
+        if (b > largest) {
             largest = b;
         }
 
-        if(c > largest) {
+        if (c > largest) {
             largest = c;
         }
 

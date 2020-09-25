@@ -2,7 +2,6 @@ package lesson_4.exercises.Knights_Run.Heuristic;
 
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 public class KnightTourHeuristic {
@@ -67,7 +66,7 @@ public class KnightTourHeuristic {
                 }
                 if (k == N - 1 && !options.isEmpty()) {
                     int selectNumber = options.get(new Random().nextInt(options.size()));
-                   return move(moveCounter, x + vertical[selectNumber], y + horizontal[selectNumber]);
+                    return move(moveCounter, x + vertical[selectNumber], y + horizontal[selectNumber]);
                 }
             }
         }
@@ -76,7 +75,7 @@ public class KnightTourHeuristic {
 
     private boolean move(int moveCounter, int row, int column) {
         board[row][column] = moveCounter;
-        return step(row, column, moveCounter+1);
+        return step(row, column, moveCounter + 1);
     }
 
     public boolean safe(int row, int column) {

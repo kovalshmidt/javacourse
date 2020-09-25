@@ -1,7 +1,5 @@
 package lesson_5.exercises;
 
-import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
-
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Random;
@@ -30,7 +28,7 @@ public class LinkedListSortedOrder {
         for (Integer number : numberOrder) {
             sum += number;
         }
-        final double sumDouble = sum,lengthDouble = numberOrder.size();
+        final double sumDouble = sum, lengthDouble = numberOrder.size();
         double average = sumDouble / lengthDouble;
         System.out.println("Sum: " + sum);
         System.out.println("Average: " + average);

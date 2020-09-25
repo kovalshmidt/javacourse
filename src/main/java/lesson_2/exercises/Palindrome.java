@@ -19,8 +19,8 @@ public class Palindrome {
         Scanner input = new Scanner(System.in);
         int number = 0;
         String inputNumber;
-        boolean palindrome,error = false;
-            System.out.println("Enter an integer:");
+        boolean palindrome, error = false;
+        System.out.println("Enter an integer:");
         do {
             inputNumber = input.nextLine();
             if (StringUtils.isNumeric(inputNumber)) {
@@ -31,6 +31,6 @@ public class Palindrome {
                 System.out.println("Please type in a number");
                 error = true;
             }
-        }while(error);
+        } while (error);
     }
 }

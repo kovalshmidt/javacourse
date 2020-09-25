@@ -14,7 +14,7 @@ public class Dog {
     /**
      * This a constructor that sets up all the fields
      */
-    public Dog(String color, int weight, int maxSpeed, int age, int height, String gender, String race,String name) {
+    public Dog(String color, int weight, int maxSpeed, int age, int height, String gender, String race, String name) {
         this.colorOfTheSkin = color;
         this.weight = weight;
         this.maxSpeed = maxSpeed;

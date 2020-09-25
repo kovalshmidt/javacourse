@@ -29,7 +29,7 @@ public class TurtleGraphicsDIY {
                 length = input.nextInt();
             }
             Turtle.executeOrder(canvas, painter, order, length);
-            if ((order == 5)&&(painter.getPen())) {
+            if ((order == 5) && (painter.getPen())) {
                 order = 6;
                 Turtle.executeOrder(canvas, painter, order, length);
             }

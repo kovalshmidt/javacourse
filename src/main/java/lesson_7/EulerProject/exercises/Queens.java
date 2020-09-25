@@ -45,11 +45,10 @@ public class Queens {
         vertical[3] = 1;
     }
 
-    public boolean placeQueens (int column) {
+    public boolean placeQueens(int column) {
         if (column >= BOARD_SIZE) {
             return true;
-        }
-        else {
+        } else {
             boolean queenPlaced = false;
             int row = 0;
 
@@ -57,11 +56,11 @@ public class Queens {
                 if (isUnderAttack(row, column)) {
                     ++row;
                 }// end if
-                else{
+                else {
                     setQueen(row, column);
                     queenPlaced = placeQueens(column + 1);
                     if (!queenPlaced) {
-                        removeQueen(row,column);
+                        removeQueen(row, column);
                         ++row;
                     }// end if
                 }// end else
@@ -129,7 +128,7 @@ public class Queens {
         return condition;
     }
 
-    public void displayBoard () {
+    public void displayBoard() {
         int counter = 0;
         for (boolean[] booleans : board) {
             for (boolean aBoolean : booleans) {

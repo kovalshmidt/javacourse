@@ -12,19 +12,19 @@ package lesson_4.exercises.Tortoise_and_Hare;
  * the animals according to the rules in the image below. Use variables to keep track of the positions of
  * the animals (i.e., position numbers are 1–70). Start each animal at position 1 (the “starting gate”). If an
  * animal slips left before square 1, move it back to square 1.
- *
+ * <p>
  * Tortoise
  * Fast Plod    50%     3 squares right
  * Slip         20%     6 squares left
  * Slow Plod    30%     1 square right
- *
+ * <p>
  * Hare
  * Sleep        20%     none
  * Big Hop      20%     9 squares right
  * Big Slip     10%     12 squares left
  * Small Hop    30%     1 right
  * Small Slip   20%     2 left
- *
+ * <p>
  * Generate the percentages displayed in the image by producing a random integer i in the range 1 ≤ i ≤ 10.
  * For the tortoise, perform a “fast plod” when 1 ≤ i ≤ 5, a “slip” when 6 ≤ i ≤ 7 or a “slow plod” when
  * 8 ≤ i ≤10. Use a similar technique to move the hare.
@@ -50,7 +50,7 @@ public class Race {
         System.out.println("BANG !!!!!!");
         System.out.println("AND THEY'RE OFF !!!!!");
         System.out.println("----------------------------------------------------------------------");
-        while(!finished){
+        while (!finished) {
             status.moveTortoise();
             status.moveHare();
             for (int t = 0; t <= status.getTortoisePosition(); t++) {
@@ -67,9 +67,9 @@ public class Race {
                     System.out.println("H");
                 }
             }
-            System.out.println("Tortoise: "+status.getTortoisePosition() +" Hare: "+status.getHarePosition());
+            System.out.println("Tortoise: " + status.getTortoisePosition() + " Hare: " + status.getHarePosition());
 
-            if ((status.getTortoisePosition() >= 70) || (status.getHarePosition() >= 70)){
+            if ((status.getTortoisePosition() >= 70) || (status.getHarePosition() >= 70)) {
                 finished = true;
             }
             //else { A way to delete the last three lines}

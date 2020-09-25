@@ -36,7 +36,7 @@ public class Invoice {
         this.quantity = input;
         if (input < 0) quantity = 0;
     }
-    
+
     public void setPrice(double input) {
         this.price = input;
         if (input < 0) price = 0;

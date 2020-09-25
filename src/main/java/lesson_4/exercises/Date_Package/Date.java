@@ -36,7 +36,7 @@ public class Date {
             if (month < 10) {
                 singleMonth = true;
             }
-            if ((month < 1) | (month > 12)){
+            if ((month < 1) | (month > 12)) {
                 error = true;
                 System.out.println("Please type in a valid month!");
             }
@@ -48,26 +48,26 @@ public class Date {
                 singleDay = true;
             }
             error = toManyDays(day, month, false);
-            if (error){
+            if (error) {
                 System.out.println("Please type in a valid day!");
             }
-        }while (error);
+        } while (error);
         System.out.println("Type in a year:");
         year = input.nextInt();
         final boolean leapYear = (year % 4 == 0) && ((year % 400 == 0) ^ (year % 100 != 0));
         if (!leapYear) {
-            if (day > 28){
+            if (day > 28) {
                 day = 28;
             }
 
         }
         yearDays = MonthDaysToYearDays(day, month, leapYear);
-        DateOverload MDY = new DateOverload(day,month,year);
-        DateOverload StrMDY = new DateOverload(day,year,monthStr);
-        DateOverload DaysYear = new DateOverload(year,yearDays);
+        DateOverload MDY = new DateOverload(day, month, year);
+        DateOverload StrMDY = new DateOverload(day, year, monthStr);
+        DateOverload DaysYear = new DateOverload(year, yearDays);
         System.out.println((singleMonth ? "0" : "") + MDY.getMonth() + "/" + (singleDay ? "0" : "") + MDY.getDay() + "/" + MDY.getYear());
         System.out.println(StrMDY.getMonthStr() + " " + (singleDay ? "0" : "") + StrMDY.getDay() + " " + StrMDY.getYear());
-        System.out.println("Day "+DaysYear.getYearDays() + " of the year " + DaysYear.getYear());
+        System.out.println("Day " + DaysYear.getYearDays() + " of the year " + DaysYear.getYear());
 
 
     }
@@ -110,7 +110,7 @@ public class Date {
     }
 
     private static boolean toManyDays(int day, int month, boolean error) {
-        switch (month){
+        switch (month) {
             case 1:
             case 3:
             case 5:
@@ -118,7 +118,7 @@ public class Date {
             case 8:
             case 10:
             case 12:
-                if (day >31){
+                if (day > 31) {
                     error = true;
                 }
                 break;
@@ -126,14 +126,14 @@ public class Date {
             case 6:
             case 9:
             case 11:
-                if (day >30){
+                if (day > 30) {
                     error = true;
                 }
                 break;
             case 2:
-            if (day > 29){
-                error = true;
-            }
+                if (day > 29) {
+                    error = true;
+                }
         }
         return error;
     }

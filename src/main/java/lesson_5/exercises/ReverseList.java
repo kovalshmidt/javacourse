@@ -11,7 +11,7 @@ public class ReverseList {
         LinkedList<String> reverseList;
 
         System.out.println("Type in 10 words:");
-        for(int i = 1;i<=10;i++){
+        for (int i = 1; i <= 10; i++) {
             characterList.add(input.next());
         }
         System.out.println(characterList);

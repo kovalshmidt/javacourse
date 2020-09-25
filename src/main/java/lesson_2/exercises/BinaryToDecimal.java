@@ -10,9 +10,8 @@ public class BinaryToDecimal {
         System.out.println("Put in a binary:");
         int binary = input.nextInt();
         int result = getDecimal(binary);
-        System.out.println("The decimal equivalent of "+binary+" is "+result);
+        System.out.println("The decimal equivalent of " + binary + " is " + result);
     }
-
 
 
 }

@@ -1,8 +1,5 @@
 package lesson_6;
 
-import lesson_5.abstraction.Doberman;
-import lesson_5.abstraction.Dog;
-
 import java.util.*;
 import java.util.stream.Collectors;
 

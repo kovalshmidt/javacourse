@@ -36,27 +36,29 @@ class UtilityTest {
     }
 
     @Test
-    public void  testOddEven(){
+    public void testOddEven() {
         softAssertions.assertThat(Utility.Boolean_Tests.isEven(47)).isFalse();
         softAssertions.assertThat(Utility.Boolean_Tests.isEven(83434)).isTrue();
         softAssertions.assertThat(Utility.Boolean_Tests.isEven(0)).isTrue();
         softAssertions.assertThat(Utility.Boolean_Tests.isEven(94791)).isFalse();
         softAssertions.assertThat(Utility.Boolean_Tests.isEven(412)).isTrue();
     }
+
     @Test
-    public void testDecryptEncrypt(){
+    public void testDecryptEncrypt() {
         softAssertions.assertThat(Utility.Cryptography.encrypt(1234)).isEqualTo(189);
         softAssertions.assertThat(Utility.Cryptography.decrypt(189)).isEqualTo(1234);
     }
+
     @Test
-    public void testQuotientRemainderDigits(){
-        softAssertions.assertThat(Utility.QuotientsAndDigits.quotient(259,23)).isEqualTo(11);
-        softAssertions.assertThat(Utility.QuotientsAndDigits.remainder(259,23)).isEqualTo(6);
+    public void testQuotientRemainderDigits() {
+        softAssertions.assertThat(Utility.QuotientsAndDigits.quotient(259, 23)).isEqualTo(11);
+        softAssertions.assertThat(Utility.QuotientsAndDigits.remainder(259, 23)).isEqualTo(6);
         softAssertions.assertThat(Utility.QuotientsAndDigits.digits(4562)).isEqualTo("4  5  6  2");
     }
 
     @Test
-    public void testTemperatureCalculator(){
+    public void testTemperatureCalculator() {
         softAssertions.assertThat(Utility.Temperature.toCelsius(100)).isEqualTo(37.77777777777778);
         softAssertions.assertThat(Utility.Temperature.toFahrenheit(37.77777777777778)).isEqualTo(100.0);
         softAssertions.assertThat(Utility.Temperature.toCelsius(-40)).isEqualTo(-40);
@@ -64,7 +66,7 @@ class UtilityTest {
     }
 
     @Test
-    public void testPrime(){
+    public void testPrime() {
         softAssertions.assertThat(Utility.Boolean_Tests.isPrime(0)).isFalse();
         softAssertions.assertThat(Utility.Boolean_Tests.isPrime(1)).isFalse();
         softAssertions.assertThat(Utility.Boolean_Tests.isPrime(11)).isTrue();

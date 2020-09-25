@@ -35,7 +35,7 @@ public class DiceRoll {
             dice1 = diceThrow();
             dice2 = diceThrow();
             diceSum = dice1 + dice2;
-            combo[diceSum - 2] +=1;
+            combo[diceSum - 2] += 1;
 
 
         }

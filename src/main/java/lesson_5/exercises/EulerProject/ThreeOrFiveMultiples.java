@@ -18,7 +18,7 @@ public class ThreeOrFiveMultiples {
         for (int i = 3; i < 1000; i++) {
             if ((i % 3 == 0) || (i % 5 == 0)) {
                 multiples.add(i);
-                    sum += i;
+                sum += i;
             }
         }
         System.out.println("Sum is " + sum);

@@ -49,7 +49,7 @@ public class EightQueens {
             if (counter == 8) {
                 break;
             }
-            if (!checkBoard()){
+            if (!checkBoard()) {
                 run();
             }
         }
