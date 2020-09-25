@@ -57,18 +57,13 @@ public class ProductController {
         return ResponseEntity.ok(result);
     }
 
-    //    @PostMapping("/save")
-//    public ResponseEntity<User> user(@Valid @RequestBody User user) throws URISyntaxException {
-//        User result = userService.save(user);
-//        return ResponseEntity.created(new URI("/api/user/" + result.getId())).body(result);
-//    }
-//
-//    @PutMapping("/update")
-//    public ResponseEntity<User> updateUser(@Valid @RequestBody User user) {
-//        User result = userService.save(user);
-//        return ResponseEntity.ok().body(result);
-//    }
-//
+
+    @PutMapping("/update")
+    public ResponseEntity<Product> updateUser(@Valid @RequestBody Product product) {
+        Product result = productService.save(product);
+        return ResponseEntity.ok().body(result);
+    }
+
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteUser(@PathVariable String id) {
         productService.deleteById(UUID.fromString(id));

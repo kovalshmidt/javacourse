@@ -33,8 +33,7 @@ public class Mapper {
         productViewModel.setDescription(product.getDescription());
         productViewModel.setName(product.getName());
         productViewModel.setAvailable(product.getAvailable());
-        productViewModel.setUserId(product.getUser().getUuid().toString());
-
+        productViewModel.setUserId(product.getUser() == null ? "" : product.getUser().getUuid().toString());
         return productViewModel;
     }
 

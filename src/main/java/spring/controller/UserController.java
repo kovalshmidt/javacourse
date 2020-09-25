@@ -49,19 +49,13 @@ public class UserController {
         //return a ResponseEntity with saved User (saved it means that an id was assigned to it in the process of saving)
         return ResponseEntity.ok(result);
     }
+    
+    @PutMapping("/update")
+    public ResponseEntity<User> updateUser(@Valid @RequestBody User user) {
+        User result = userService.save(user);
+        return ResponseEntity.ok().body(result);
+    }
 
-    //    @PostMapping("/save")
-//    public ResponseEntity<User> user(@Valid @RequestBody User user) throws URISyntaxException {
-//        User result = userService.save(user);
-//        return ResponseEntity.created(new URI("/api/user/" + result.getId())).body(result);
-//    }
-//
-//    @PutMapping("/update")
-//    public ResponseEntity<User> updateUser(@Valid @RequestBody User user) {
-//        User result = userService.save(user);
-//        return ResponseEntity.ok().body(result);
-//    }
-//
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteUser(@PathVariable String id) {
         userService.deleteById(UUID.fromString(id));
