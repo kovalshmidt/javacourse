@@ -19,7 +19,7 @@ public class Product {
     private String name;
     private String description;
     private int available;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     private User user;
 
 }
