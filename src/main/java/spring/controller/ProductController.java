@@ -70,4 +70,10 @@ public class ProductController {
         return ResponseEntity.ok().build();
     }
 
+    //Retrieve all products that have available > 0
+    @GetMapping("/getProductsStocked")
+    public Collection<Product> productsStocked() {
+        return productService.findByStocked();
+    }
+
 }

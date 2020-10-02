@@ -5,9 +5,11 @@ import org.springframework.stereotype.Service;
 import spring.model.Product;
 import spring.repository.ProductRepository;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -26,6 +28,11 @@ public class ProductServiceImpl implements ProductService {
     public Product findByName(String name) {
         Optional<Product> optional = productRepository.findByName(name);
         return optional.orElse(null);
+    }
+
+    @Override
+    public Collection<Product> findByStocked() {
+       return productRepository.findAll().stream().filter(x -> x.getAvailable() > 0).collect(Collectors.toList());
     }
 
     @Override

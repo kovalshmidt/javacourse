@@ -62,6 +62,13 @@ public class DBFiller implements CommandLineRunner {
         log.info("Product Screwdriver was inserted in the database");
 
 
+        Product goldenWrench = new Product();
+        goldenWrench.setName("Golden Wrench");
+        goldenWrench.setDescription("Extremely rare");
+        goldenWrench.setAvailable(0);
+        productRepository.save(goldenWrench);
+        log.info("Product Screwdriver was inserted in the database");
+
         log.info("Database initialized...");
     }
 }
