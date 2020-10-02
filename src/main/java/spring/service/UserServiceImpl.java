@@ -28,7 +28,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> getNoProductUsers() {
-        return   userRepository.findAll().stream().filter(x -> x.getProducts().isEmpty()).collect(Collectors.toList());
+        return findAll().stream().filter(x -> x.getProducts().isEmpty()).collect(Collectors.toList());
     }
 
     @Override

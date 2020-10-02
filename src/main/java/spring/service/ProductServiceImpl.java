@@ -32,12 +32,12 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Collection<Product> findByStocked() {
-       return productRepository.findAll().stream().filter(x -> x.getAvailable() > 0).collect(Collectors.toList());
+        return findAll().stream().filter(x -> x.getAvailable() > 0).collect(Collectors.toList());
     }
 
     @Override
     public Collection<Product> findWithUser() {
-        return productRepository.findAll().stream().filter(x -> x.getUser() != null).collect(Collectors.toList());
+        return findAll().stream().filter(x -> x.getUser() != null).collect(Collectors.toList());
     }
 
     @Override

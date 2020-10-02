@@ -75,14 +75,15 @@ public class ProductController {
     public Collection<Product> productsStocked() {
         return productService.findByStocked();
     }
+
     // retrieve Products with Users
     @GetMapping("/getAcquired")
-    public Collection<Product> productsAcquired(){
+    public Collection<Product> productsAcquired() {
         return productService.findWithUser();
     }
 
     @GetMapping("/getByName/{name}")
-    public ResponseEntity<Product> getProductName(@PathVariable("name")String name){
+    public ResponseEntity<Product> getProductName(@PathVariable("name") String name) {
         Product product = productService.findByName(name);
         return ResponseEntity.ok(product);
     }

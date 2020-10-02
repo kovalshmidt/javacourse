@@ -50,7 +50,7 @@ public class UserController {
         //return a ResponseEntity with saved User (saved it means that an id was assigned to it in the process of saving)
         return ResponseEntity.ok(result);
     }
-    
+
     @PutMapping("/update")
     public ResponseEntity<User> updateUser(@Valid @RequestBody User user) {
         User result = userService.save(user);
@@ -64,16 +64,15 @@ public class UserController {
     }
 
     @GetMapping("/getEmail/{email}")
-    public ResponseEntity<User> getUserByEmail(@PathVariable("email") String email){
+    public ResponseEntity<User> getUserByEmail(@PathVariable("email") String email) {
         //Ask UserService for User matching the E-Mail
         User user = userService.findByEmail(email);
         return ResponseEntity.ok(user);
-
     }
 
     @GetMapping("/getUserNoProduct")
-    public Collection<User> getUsersNoProduct(){
-        return  userService.getNoProductUsers();
+    public Collection<User> getUsersNoProduct() {
+        return userService.getNoProductUsers();
     }
 
 }
