@@ -12,6 +12,7 @@ import java.net.URISyntaxException;
 import java.util.Collection;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @RestController
 @CrossOrigin
@@ -68,6 +69,11 @@ public class UserController {
         User user = userService.findByEmail(email);
         return ResponseEntity.ok(user);
 
+    }
+
+    @GetMapping("/getUserNoProduct")
+    public Collection<User> getUsersNoProduct(){
+        return  userService.getNoProductUsers();
     }
 
 }

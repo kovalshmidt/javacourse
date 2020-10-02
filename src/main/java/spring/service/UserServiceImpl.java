@@ -8,6 +8,7 @@ import spring.repository.UserRepository;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -23,6 +24,11 @@ public class UserServiceImpl implements UserService {
     public User findByEmail(String email) {
         Optional<User> optional = userRepository.findByEmail(email);
         return optional.orElse(null);
+    }
+
+    @Override
+    public List<User> getNoProductUsers() {
+        return   userRepository.findAll().stream().filter(x -> x.getProducts().isEmpty()).collect(Collectors.toList());
     }
 
     @Override
