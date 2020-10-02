@@ -33,7 +33,7 @@ public class UserController {
         return userService.findAll();
     }
 
-    @GetMapping("/get/{id}") //localhost:8080/user/get/25251514234
+    @GetMapping("/getId/{id}") //localhost:8080/user/get/25251514234
     public ResponseEntity getUser(@PathVariable("id") String id) {
         Optional<User> user = userService.findById(UUID.fromString(id));
         return user.map(response -> ResponseEntity.ok().body(response))
@@ -60,6 +60,14 @@ public class UserController {
     public ResponseEntity<?> deleteUser(@PathVariable String id) {
         userService.deleteById(UUID.fromString(id));
         return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/getEmail/{email}")
+    public ResponseEntity<User> getUserByEmail(@PathVariable("email") String email){
+        //Ask UserService for User matching the E-Mail
+        User user = userService.findByEmail(email);
+        return ResponseEntity.ok(user);
+
     }
 
 }
