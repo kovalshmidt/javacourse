@@ -75,5 +75,9 @@ public class ProductController {
     public Collection<Product> productsStocked() {
         return productService.findByStocked();
     }
-
+    // retrieve Products with Users
+    @GetMapping("/getAcquired")
+    public Collection<Product> productsAcquired(){
+        return productService.findWithUser();
+    }
 }

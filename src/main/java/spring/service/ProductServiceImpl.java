@@ -36,6 +36,11 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public Collection<Product> findWithUser() {
+        return productRepository.findAll().stream().filter(x -> x.getUser() != null).collect(Collectors.toList());
+    }
+
+    @Override
     public List<Product> findAll() {
         return productRepository.findAll();
     }

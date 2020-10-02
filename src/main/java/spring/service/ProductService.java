@@ -20,4 +20,6 @@ public interface ProductService {
     Product findByName(String name);
 
     Collection<Product> findByStocked();
+
+    Collection<Product> findWithUser();
 }
