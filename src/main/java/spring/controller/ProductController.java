@@ -80,4 +80,10 @@ public class ProductController {
     public Collection<Product> productsAcquired(){
         return productService.findWithUser();
     }
+
+    @GetMapping("/getByName/{name}")
+    public ResponseEntity<Product> getProductName(@PathVariable("name")String name){
+        Product product = productService.findByName(name);
+        return ResponseEntity.ok(product);
+    }
 }
