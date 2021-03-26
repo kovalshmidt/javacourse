@@ -39,7 +39,6 @@ public class PrimeNumber {
         }
         return 0;
     }
-
     //returns all prime factors
     private static void factorCheck(Collection<Integer> primeFactors, int prime, int factor) {
         //other factor (e.g. 2*50 = 100 >> 100/2 = 50)

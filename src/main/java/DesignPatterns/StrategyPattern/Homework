@@ -1,0 +1,4 @@
+1. Create an strategy family for vehicles
+ -> 3 strategies: CrashBehaviour, methodOfTravel, fuel
+2. a class machine
+3. Strategy family for Creatures/NPCs
