@@ -1,0 +1,3 @@
+1.Implement visitor pattern
+ -> Modify Visitable(RPG Classes) and Visitor(Equipment)
+ 2. UML for Visitor and Visitable and for Number 1

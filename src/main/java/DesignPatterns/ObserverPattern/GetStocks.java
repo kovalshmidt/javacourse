@@ -1,8 +1,13 @@
 package DesignPatterns.ObserverPattern;
 
+import lombok.SneakyThrows;
+
 import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 public class GetStocks implements Runnable {
+    public final static NumberFormat numberFormat = NumberFormat.getInstance(Locale.getDefault());
     private String stock;
     private double price;
     private Subject stockGrabber;
@@ -13,6 +18,7 @@ public class GetStocks implements Runnable {
         this.stockGrabber = stockGrabber;
     }
 
+    @SneakyThrows
     @Override
     public void run() {
         for (int i = 1; i <= 20; i++) {
@@ -22,9 +28,8 @@ public class GetStocks implements Runnable {
 
             }
             double randomNumber = (Math.random() * .06) - .03;
-            DecimalFormat format = new DecimalFormat("#,##");
-            price = Double.parseDouble(format.format((price + randomNumber)));
-
+            //price = Double.parseDouble(format.format((price + randomNumber)));
+            price = numberFormat.parse(String.format("%,.2f", (price+randomNumber))).doubleValue();
             //ArrayList = array is a List = list
             // Downcasting (ArrayList) list = ArrayList
 
