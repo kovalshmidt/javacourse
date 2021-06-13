@@ -1,0 +1,3 @@
+1.UML for StatePattern ATMState
+2. Write State Design Pattern for a lake with 4 states (Water,Lava,Empty,Frozen)
+3. Proxy Design Pattern, apply it to an ATM
